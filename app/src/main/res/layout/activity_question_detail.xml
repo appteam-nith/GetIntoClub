@@ -23,118 +23,149 @@
         app:cardElevation="0dp"
         app:cardPreventCornerOverlap="true">
 
-        <ScrollView
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="8dp">
+            android:layout_height="wrap_content">
 
-            <LinearLayout
+            <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_height="30dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/white_gradient_top"
+                android:elevation="4dp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="24dp"
-                    android:layout_marginTop="16dp"
-                    android:fontFamily="@font/psb"
-                    android:text="Why should we hire you?"
-                    android:textColor="@color/black"
-                    android:textSize="15sp" />
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="8dp">
 
-                <EditText
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
-                    android:background="@drawable/green_corner_box"
-                    android:fontFamily="@font/ps"
-                    android:hint="     Write your answer here..."
-                    android:minLines="3"
-                    android:paddingBottom="8dp"
-                    android:paddingTop="8dp"
-                    android:textSize="17sp" />
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="24dp"
-                    android:layout_marginTop="16dp"
-                    android:fontFamily="@font/psb"
-                    android:text="What will you do for the App Team?"
-                    android:textColor="@color/black"
-                    android:textSize="15sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="@font/psb"
+                        android:text="Why should we select you?"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
 
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
-                    android:background="@drawable/green_corner_box"
-                    android:fontFamily="@font/ps"
-                    android:hint="     Write your answer here..."
-                    android:minLines="3"
-                    android:paddingBottom="8dp"
-                    android:paddingTop="8dp"
-                    android:textSize="17sp" />
+                    <EditText
+                        android:id="@+id/q1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:background="@drawable/green_corner_box"
+                        android:fontFamily="@font/ps"
+                        android:hint="     Write your answer here..."
+                        android:minLines="3"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:paddingTop="8dp"
+                        android:textSize="17sp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="24dp"
-                    android:layout_marginTop="16dp"
-                    android:fontFamily="@font/psb"
-                    android:text="What are you expectations from App Team?"
-                    android:textColor="@color/black"
-                    android:textSize="15sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="@font/psb"
+                        android:text="What will you do for our club?"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
 
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
-                    android:background="@drawable/green_corner_box"
-                    android:fontFamily="@font/ps"
-                    android:hint="     Write your answer here..."
-                    android:minLines="3"
-                    android:paddingBottom="8dp"
-                    android:paddingTop="8dp"
-                    android:textSize="17sp" />
+                    <EditText
+                        android:id="@+id/q2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:background="@drawable/green_corner_box"
+                        android:fontFamily="@font/ps"
+                        android:hint="     Write your answer here..."
+                        android:minLines="3"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:paddingTop="8dp"
+                        android:textSize="17sp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="24dp"
-                    android:layout_marginTop="16dp"
-                    android:fontFamily="@font/psb"
-                    android:text="Do you prefer working independently or in a team?"
-                    android:textColor="@color/black"
-                    android:textSize="15sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="@font/psb"
+                        android:text="What are your expectations from us?"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
 
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
-                    android:background="@drawable/green_corner_box"
-                    android:fontFamily="@font/ps"
-                    android:hint="     Write your answer here..."
-                    android:minLines="3"
-                    android:paddingBottom="8dp"
-                    android:paddingTop="8dp"
-                    android:textSize="17sp" />
-            </LinearLayout>
-        </ScrollView>
+                    <EditText
+                        android:id="@+id/q3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:background="@drawable/green_corner_box"
+                        android:fontFamily="@font/ps"
+                        android:hint="     Write your answer here..."
+                        android:minLines="3"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:paddingTop="8dp"
+                        android:textSize="17sp" />
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="@font/psb"
+                        android:text="Do you prefer working independently or in a team?"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/q4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:background="@drawable/green_corner_box"
+                        android:fontFamily="@font/ps"
+                        android:hint="     Write your answer here..."
+                        android:minLines="3"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:paddingTop="8dp"
+                        android:textSize="17sp" />
+                </LinearLayout>
+            </ScrollView>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/white_gradient" />
+        </RelativeLayout>
     </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.CardView
