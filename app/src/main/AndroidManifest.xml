@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
+
+        </activity>
+        <activity android:name=".QuestionDetail" android:theme="@style/Theme.Transparent">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,7 +21,6 @@
         </activity>
         <activity android:name=".ContactDetail" android:theme="@style/Theme.Transparent"/>
         <activity android:name=".SkillDetail" android:theme="@style/Theme.Transparent"/>
-        <activity android:name=".QuestionDetail" android:theme="@style/Theme.Transparent"/>
 
     </application>
 
