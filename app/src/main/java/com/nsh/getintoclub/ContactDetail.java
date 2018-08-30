@@ -1,5 +1,6 @@
 package com.nsh.getintoclub;
 
+import android.animation.ObjectAnimator;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
@@ -21,6 +22,7 @@ import java.util.Map;
 public class ContactDetail extends AppCompatActivity {
 EditText Name,RollNumber,Branch,Mobile,Email;
 TextView doneContact;
+View backView;
 int rollLength;
 public static String name,roll,branch,mobile,email;
     @Override
@@ -40,18 +42,22 @@ public static String name,roll,branch,mobile,email;
         Branch = findViewById(R.id.branch);
         Mobile = findViewById(R.id.mobile);
         Email = findViewById(R.id.email);
-
+        backView = findViewById(R.id.backView);
         setupdata();
     }
     public void setupdata()
     {
+        backView.setAlpha(0f);
+        ObjectAnimator anim = ObjectAnimator.ofFloat(backView,"alpha",1);
+        anim.setDuration(1000);
+        anim.setStartDelay(1000);
+        anim.start();
         name = String.valueOf(Name.getText());
         roll = String.valueOf(RollNumber.getText());
         branch = String.valueOf(Branch.getText());
         mobile = String.valueOf(Mobile.getText());
         email = String.valueOf(Email.getText());
         doneContact = findViewById(R.id.donecontact);
-
 
     }
     public void onClick(View view)
