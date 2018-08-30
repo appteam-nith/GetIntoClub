@@ -10,18 +10,20 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
-        </activity>
-        <activity android:name=".ContactDetail" android:theme="@style/Theme.Transparent"/>
-        <activity android:name=".SkillDetail" android:theme="@style/Theme.Transparent">
-
-        </activity>
-        <activity android:name=".test" android:theme="@style/Theme.Transparent">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".ContactDetail" android:theme="@style/Theme.Transparent">
+
+        </activity>
+        <activity android:name=".SkillDetail" android:theme="@style/Theme.Transparent">
+
+        </activity>
+        <activity android:name=".test" android:theme="@style/Theme.Transparent">
+
         </activity>
 
         <activity android:name=".QuestionDetail" android:theme="@style/Theme.Transparent"/>

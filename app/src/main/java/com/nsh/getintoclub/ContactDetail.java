@@ -1,21 +1,34 @@
 package com.nsh.getintoclub;
 
+import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
+import java.util.Map;
+
 public class ContactDetail extends AppCompatActivity {
 EditText Name,RollNumber,Branch,Mobile,Email;
+TextView doneContact;
+int rollLength;
+public static String name,roll,branch,mobile,email;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact_detail);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT)
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+
         initUI();
     }
     public void initUI()
@@ -26,6 +39,49 @@ EditText Name,RollNumber,Branch,Mobile,Email;
         Branch = findViewById(R.id.branch);
         Mobile = findViewById(R.id.mobile);
         Email = findViewById(R.id.email);
+
+        setupdata();
+    }
+    public void setupdata()
+    {
+        name = String.valueOf(Name.getText());
+        roll = String.valueOf(RollNumber.getText());
+        branch = String.valueOf(Branch.getText());
+        mobile = String.valueOf(Mobile.getText());
+        email = String.valueOf(Email.getText());
+        doneContact = findViewById(R.id.donecontact);
+
+
+    }
+    public void onClick(View view)
+    {
+    rollLength = name.length();
+    if (rollLength == 0)
+    {
+        Toast.makeText(this, "Seems to be incomplete", Toast.LENGTH_SHORT).show();
+    }
+    else
+    {
+//        FirebaseDatabase.getInstance().getReference().child("RegistrationModel").child(userId)
+//                .addListenerForSingleValueEvent(new ValueEventListener() {
+//                    @Override
+//                    public void onDataChange(DataSnapshot dataSnapshot) {
+//                        Map<String, String> stringStringHashMap =(Map<String, String>) dataSnapshot.getValue();
+//
+//                        stringStringHashMap.put("refresh_token",refreshedToken);
+//
+//                        FirebaseDatabase.getInstance().getReference().child("RegistrationModel").child(userId)
+//                                .setValue(stringStringHashMap);
+//
+//                    }
+//
+//                    @Override
+//                    public void onCancelled(DatabaseError databaseError) {
+//
+//                    }
+//                });
+
     }
 
+    }
 }
