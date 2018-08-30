@@ -70,7 +70,7 @@
                     android:padding="8dp"
                     android:layout_marginLeft="16dp"
                     android:fontFamily="@font/psb"
-                    android:text="Arear of Interset"
+                    android:text="Area of Interset"
                     android:textSize="16sp"/>
                 <EditText
                     android:layout_width="match_parent"
