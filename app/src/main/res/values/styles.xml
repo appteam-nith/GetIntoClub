@@ -25,5 +25,7 @@
   <style name="AppTheme.BlueRipple" parent="Theme.Transparent">
         <item name="colorControlHighlight">@color/blueLight</item>
     </style>
-
+    <style name="AppTheme.GreenRipple" parent="Theme.Transparent">
+        <item name="colorControlHighlight">@color/greenLight</item>
+    </style>
 </resources>
