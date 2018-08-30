@@ -4,12 +4,13 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     Button contact, skills, questions;
-
+    CardView contactsmallCard,contactlargeCard,skillsmallCard,skilllargeCard,questionscontactsmallCard,questionscontactlargeCard;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +23,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         contact = findViewById(R.id.contact);
         skills = findViewById(R.id.skills);
         questions = findViewById(R.id.questions);
+        contactsmallCard = findViewById(R.id.contactsmallCard);
+        contactlargeCard = findViewById(R.id.contactlargeCard);
+        skillsmallCard = findViewById(R.id.skillsmallCard);
+        skilllargeCard = findViewById(R.id.skilllargeCard);
+        questionscontactsmallCard = findViewById(R.id.questionssmallCard);
+        questionscontactlargeCard = findViewById(R.id.questionslargeCard);
         setupdata();
     }
 
