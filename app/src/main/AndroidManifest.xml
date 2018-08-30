@@ -20,12 +20,11 @@
 
         </activity>
         <activity android:name=".SkillDetail" android:theme="@style/Theme.Transparent">
-
         </activity>
         <activity android:name=".test" android:theme="@style/Theme.Transparent">
-
         </activity>
-
+        <activity android:name=".test" android:theme="@style/Theme.Transparent">
+        </activity>
         <activity android:name=".QuestionDetail" android:theme="@style/Theme.Transparent"/>
 
 
