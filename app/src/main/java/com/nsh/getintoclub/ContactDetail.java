@@ -47,11 +47,11 @@ public static String name,roll,branch,mobile,email;
     }
     public void setupdata()
     {
-        backView.setAlpha(0f);
-        ObjectAnimator anim = ObjectAnimator.ofFloat(backView,"alpha",1);
-        anim.setDuration(1000);
-        anim.setStartDelay(1000);
-        anim.start();
+//        backView.setAlpha(0f);
+//        ObjectAnimator anim = ObjectAnimator.ofFloat(backView,"alpha",1);
+//        anim.setDuration(1000);
+//        anim.setStartDelay(1000);
+//        anim.start();
         name = String.valueOf(Name.getText());
         roll = String.valueOf(RollNumber.getText());
         branch = String.valueOf(Branch.getText());

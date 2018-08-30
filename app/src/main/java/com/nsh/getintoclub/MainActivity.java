@@ -1,10 +1,13 @@
 package com.nsh.getintoclub;
 
+import android.app.ActivityOptions;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
+import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
 
@@ -36,13 +39,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         contact.setOnClickListener(this);
         skills.setOnClickListener(this);
         questions.setOnClickListener(this);
+
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.contact:
-                startActivity(new Intent(MainActivity.this, ContactDetail.class));
+                final ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(
+                        MainActivity.this,
+                        Pair.create((View) contactsmallCard, "contactButton"),
+                        Pair.create((View) contactlargeCard, "contactBack"));
+                Intent intent = new Intent(MainActivity.this, ContactDetail.class);
+                MainActivity.this.startActivity(intent
+                        .putExtra("shared_element_transition_name", v.getTransitionName()), options.toBundle());
+
                 break;
             case R.id.skills:
                 startActivity(new Intent(MainActivity.this, SkillDetail.class));
