@@ -1,5 +1,6 @@
 package com.nsh.getintoclub;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -17,6 +18,7 @@ int rollLength;
 public static String skill,interset,achievments;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Intent intent = getIntent();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_skill_detail);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT)

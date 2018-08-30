@@ -1,5 +1,6 @@
 package com.nsh.getintoclub;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +11,7 @@ public class QuestionDetail extends AppCompatActivity {
     EditText ques1,ques2,ques3,ques4;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Intent intent = getIntent();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question_detail);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT)
