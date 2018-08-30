@@ -1,5 +1,6 @@
 package com.nsh.getintoclub;
 
+import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import android.widget.Toast;
 public class SkillDetail extends AppCompatActivity {
 EditText skillet,intersetet,achievmentset;
 TextView doneSkill;
+View backView;
 int rollLength;
 public static String skill,interset,achievments;
     @Override
@@ -31,10 +33,16 @@ public static String skill,interset,achievments;
         intersetet=findViewById(R.id.interset);
         achievmentset=findViewById(R.id.achievements);
         doneSkill=findViewById(R.id.doneSkill);
+        backView=findViewById(R.id.backView);
         setupdata();
     }
     public void setupdata()
     {
+        backView.setAlpha(0f);
+        ObjectAnimator anim = ObjectAnimator.ofFloat(backView,"alpha",1);
+        anim.setDuration(1000); // duration 3 seconds
+        anim.setStartDelay(1000);
+        anim.start();
         skill=String.valueOf(skillet.getText());
         interset=String.valueOf(intersetet.getText());
         achievments=String.valueOf(achievmentset.getText());
