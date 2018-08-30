@@ -18,8 +18,11 @@
         <item name="android:backgroundDimEnabled">false</item>
     </style>
 
-    <style name="AppTheme.RedRipple" parent="Theme.Transparent">
+  <style name="AppTheme.RedRipple" parent="Theme.Transparent">
         <item name="colorControlHighlight">@color/redDark</item>
     </style>
-
+  
+  <style name="AppTheme.BlueRipple" parent="Theme.Transparent">
+        <item name="colorControlHighlight">@color/blueLight</item>
+    </style>
 </resources>
