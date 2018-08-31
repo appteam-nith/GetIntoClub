@@ -1,22 +1,31 @@
 package com.nsh.getintoclub;
-
-import android.animation.ObjectAnimator;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Editable;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 public class SkillDetail extends AppCompatActivity {
 EditText skillet,intersetet,achievmentset;
 TextView doneSkill;
 View backView;
 int rollLength;
+    Context context;
+    RecyclerView recyclerView;
+    RelativeLayout relativeLayout;
+    RecyclerView.Adapter recyclerViewAdapter;
+    RecyclerView.LayoutManager recylerViewLayoutManager;
+    String[] subjects =
+            {
+                    "CSS","HTML","JAVA","PHP"," C ","C++","PHOTOSHOP","ANDROID","PYTHON"
+            };
 public static String skill,interset,achievments;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,14 +47,28 @@ public static String skill,interset,achievments;
     }
     public void setupdata()
     {
-        backView.setAlpha(0f);
-        ObjectAnimator anim = ObjectAnimator.ofFloat(backView,"alpha",1);
-        anim.setDuration(1000); // duration 3 seconds
-        anim.setStartDelay(1000);
-        anim.start();
+
+//        backView.setAlpha(0f);
+//        ObjectAnimator anim = ObjectAnimator.ofFloat(backView,"alpha",1);
+//        anim.setDuration(1000); // duration 3 seconds
+//        anim.setStartDelay(1000);
+//        anim.start();
         skill=String.valueOf(skillet.getText());
         interset=String.valueOf(intersetet.getText());
         achievments=String.valueOf(achievmentset.getText());
+        context = getApplicationContext();
+
+        relativeLayout = (RelativeLayout) findViewById(R.id.relativelayout1);
+
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerview1);
+
+        recylerViewLayoutManager = new LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false);
+
+        recyclerView.setLayoutManager(recylerViewLayoutManager);
+
+        recyclerViewAdapter = new RecyclerViewAdapter(context, subjects);
+
+        recyclerView.setAdapter(recyclerViewAdapter);
     }
     public void onClick(View view)
     {
