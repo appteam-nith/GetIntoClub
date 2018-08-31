@@ -1,13 +1,20 @@
 package com.nsh.getintoclub.adapter;
 
-import android.graphics.drawable.Drawable;
+import android.app.Activity;
+import android.app.ActivityOptions;
+import android.content.Intent;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Pair;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.nsh.getintoclub.ContactDetail;
+import com.nsh.getintoclub.QuestionDetail;
 import com.nsh.getintoclub.R;
+import com.nsh.getintoclub.SkillDetail;
 import com.nsh.getintoclub.model.Quote;
 
 import java.util.List;
@@ -18,9 +25,13 @@ import java.util.List;
 
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> {
 
+    ActivityOptions options;
+    Intent intent;
     List<Quote> quoteList;
+    Activity context;
 
-    public MainAdapter(List<Quote> quoteList) {
+    public MainAdapter(List<Quote> quoteList, Activity context) {
+        this.context = context;
         this.quoteList = quoteList;
     }
 
@@ -31,12 +42,50 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
     }
 
     @Override
-    public void onBindViewHolder(MainAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(final MainAdapter.MyViewHolder holder, final int position) {
         Quote quote = quoteList.get(position);
         holder.detail.setText(quote.getDetail());
         holder.title.setText(quote.getTitle());
         holder.textView.setText(quote.getQuote());
         holder.relativeLayout.setBackground(quote.getDrawable());
+        holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                switch (position) {
+
+                    case 0:
+                        options = ActivityOptions.makeSceneTransitionAnimation(
+                                context,
+                                Pair.create((View) holder.backCard, "backAnim"),
+                                Pair.create((View) holder.frontCard, "frontAnim"));
+                        intent = new Intent(context, QuestionDetail.class);
+                        context.startActivity(intent
+                                .putExtra("shared_element_transition_name", v.getTransitionName()), options.toBundle());
+                        break;
+                    case 1:
+                        options = ActivityOptions.makeSceneTransitionAnimation(
+                                context,
+                                Pair.create((View) holder.backCard, "backAnim"),
+                                Pair.create((View) holder.frontCard, "frontAnim"));
+                        intent = new Intent(context, SkillDetail.class);
+                        context.startActivity(intent
+                                .putExtra("shared_element_transition_name", v.getTransitionName()), options.toBundle());
+                        break;
+                    case 2:
+                        options = ActivityOptions.makeSceneTransitionAnimation(
+                                context,
+                                Pair.create((View) holder.backCard, "backAnim"),
+                                Pair.create((View) holder.frontCard, "frontAnim"));
+                        intent = new Intent(context, ContactDetail.class);
+                        context.startActivity(intent
+                                .putExtra("shared_element_transition_name", v.getTransitionName()), options.toBundle());
+                        break;
+
+
+                }
+            }
+        });
     }
 
     @Override
@@ -46,11 +95,14 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView textView,title,detail;
+        TextView textView, title, detail;
         RelativeLayout relativeLayout;
+        CardView backCard,frontCard;
 
         public MyViewHolder(View itemView) {
             super(itemView);
+            frontCard = itemView.findViewById(R.id.frontCard);
+            backCard = itemView.findViewById(R.id.backCard);
             relativeLayout = itemView.findViewById(R.id.relativeLayout);
             detail = itemView.findViewById(R.id.detail);
             title = itemView.findViewById(R.id.title);

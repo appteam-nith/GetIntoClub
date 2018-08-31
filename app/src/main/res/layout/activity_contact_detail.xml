@@ -23,13 +23,11 @@
         android:layout_marginRight="32dp"
         android:layout_marginTop="80dp"
         android:padding="8dp"
-        android:transitionName="contactBack"
+        android:transitionName="backAnim"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="16dp"
         app:cardElevation="0dp"
-        app:cardPreventCornerOverlap="true"
-
-        >
+        app:cardPreventCornerOverlap="true">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -212,10 +210,9 @@
         android:layout_marginLeft="32dp"
         android:layout_marginRight="32dp"
         android:animateLayoutChanges="true"
-        android:transitionName="contactButton"
+        android:transitionName="frontAnim"
         app:cardBackgroundColor="@color/blueDark"
-        app:cardCornerRadius="16dp"
-        >
+        app:cardCornerRadius="16dp">
 
         <RelativeLayout
             android:layout_width="wrap_content"

@@ -43,7 +43,7 @@ public class DashActivity extends AppCompatActivity {
             quoteList.add(new Quote("aaaa", getDrawable(R.drawable.red_gradient), "Skills.","Set"));
             quoteList.add(new Quote("ssss", getDrawable(R.drawable.blue_gradient), "Contact.","Info"));
         }
-        mainAdapter = new MainAdapter(quoteList);
+        mainAdapter = new MainAdapter(quoteList,DashActivity.this);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(layoutManager);
         SnapHelper snapHelperStart = new GravitySnapHelper(Gravity.END);

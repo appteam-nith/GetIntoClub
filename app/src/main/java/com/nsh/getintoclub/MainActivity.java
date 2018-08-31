@@ -7,18 +7,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.util.Pair;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     TextView questions;
     Intent intent;
-     ActivityOptions options;
+    ActivityOptions options;
     CardView skillsmallCard, contactlargeCard, skilllargeCard, questionssmallCard, questionslargeCard;
     CardView contactsmallCard;
-    TextView contact,skills;
-  
+    TextView contact, skills;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         .putExtra("shared_element_transition_name", v.getTransitionName()), options.toBundle());
                 break;
             case R.id.questions:
-                 options = ActivityOptions.makeSceneTransitionAnimation(
+                options = ActivityOptions.makeSceneTransitionAnimation(
                         MainActivity.this,
                         Pair.create((View) questionssmallCard, "QuestionButton"),
                         Pair.create((View) questionslargeCard, "QuestionBack"));
