@@ -14,7 +14,6 @@ public class ContactDetail extends AppCompatActivity {
     TextView doneContact;
     View backView;
     int rollLength;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Intent intent = getIntent();

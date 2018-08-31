@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "198631292821",
+    "firebase_url": "https://getintoclub-1234.firebaseio.com",
+    "project_id": "getintoclub-1234",
+    "storage_bucket": "getintoclub-1234.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:198631292821:android:1d296141731b232e",
+        "android_client_info": {
+          "package_name": "com.nsh.getintoclub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "198631292821-4orc9sjvbml29cj18591up7fjljucc6c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0InEGkxdZztuRxvDDWhZvbFOkN-RcOw4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
