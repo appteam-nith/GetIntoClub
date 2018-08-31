@@ -11,11 +11,15 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    Button contact, skills;
+    TextView questions;
+    Intent intent;
+     ActivityOptions options;
+    CardView contactsmallCard,contactlargeCard,skillsmallCard,skilllargeCard,questionscontactsmallCard,questionscontactlargeCard;
     Button skills, questions;
     CardView skillsmallCard, contactlargeCard, skilllargeCard, questionscontactsmallCard, questionscontactlargeCard;
     CardView contactsmallCard;
     TextView contact;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,11 +52,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.contact:
-                final ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(
+                options = ActivityOptions.makeSceneTransitionAnimation(
                         MainActivity.this,
                         Pair.create((View) contactsmallCard, "contactButton"),
                         Pair.create((View) contactlargeCard, "contactBack"));
-                Intent intent = new Intent(MainActivity.this, ContactDetail.class);
+                intent = new Intent(MainActivity.this, ContactDetail.class);
                 MainActivity.this.startActivity(intent
                         .putExtra("shared_element_transition_name", v.getTransitionName()), options.toBundle());
 
@@ -61,7 +65,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(MainActivity.this, SkillDetail.class));
                 break;
             case R.id.questions:
-                startActivity(new Intent(MainActivity.this, QuestionDetail.class));
+                 options = ActivityOptions.makeSceneTransitionAnimation(
+                        MainActivity.this,
+                        Pair.create((View) questionscontactsmallCard, "QuestionButton"),
+                        Pair.create((View) questionscontactlargeCard, "QuestionBack"));
+                intent = new Intent(MainActivity.this, QuestionDetail.class);
+                MainActivity.this.startActivity(intent
+                        .putExtra("shared_element_transition_name", v.getTransitionName()), options.toBundle());
                 break;
 
         }

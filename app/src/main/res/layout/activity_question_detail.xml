@@ -25,7 +25,8 @@
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="16dp"
         app:cardElevation="0dp"
-        app:cardPreventCornerOverlap="true">
+        app:cardPreventCornerOverlap="true"
+        android:transitionName="QuestionButton">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -189,9 +190,14 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="64dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_centerInParent="true"
         app:cardCornerRadius="16dp"
         app:cardElevation="0dp"
-        app:cardPreventCornerOverlap="true">
+        app:cardPreventCornerOverlap="true"
+        android:transitionName="QuestionBack"
+        android:animateLayoutChanges="true">
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -204,7 +210,6 @@
                 android:id="@+id/donequestion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="?attr/selectableItemBackgroundBorderless"
                 android:onClick="onClick"
                 android:padding="8dp"
                 android:text="Done"
