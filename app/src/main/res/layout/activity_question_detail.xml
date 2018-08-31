@@ -22,11 +22,14 @@
         android:layout_marginLeft="32dp"
         android:layout_marginRight="32dp"
         android:layout_marginTop="80dp"
+        android:padding="8dp"
+        android:transitionName="contactBack"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="16dp"
         app:cardElevation="0dp"
         app:cardPreventCornerOverlap="true"
-        android:transitionName="QuestionButton">
+
+        >
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -51,7 +54,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
-
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -171,7 +173,9 @@
                         android:paddingRight="8dp"
                         android:paddingTop="8dp"
                         android:textSize="17sp" />
+
                 </LinearLayout>
+
             </ScrollView>
 
             <ImageView
@@ -188,16 +192,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
         android:layout_marginBottom="64dp"
         android:layout_marginLeft="32dp"
         android:layout_marginRight="32dp"
-        android:layout_centerInParent="true"
+        android:animateLayoutChanges="true"
+        android:transitionName="QuestionButton"
+        app:cardBackgroundColor="@color/greenDark"
         app:cardCornerRadius="16dp"
-        app:cardElevation="0dp"
-        app:cardPreventCornerOverlap="true"
-        android:transitionName="QuestionBack"
-        android:animateLayoutChanges="true">
+        >
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -217,6 +220,5 @@
                 android:textSize="16sp"
                 android:theme="@style/AppTheme.GreenRipple" />
         </RelativeLayout>
-
     </android.support.v7.widget.CardView>
 </RelativeLayout>
