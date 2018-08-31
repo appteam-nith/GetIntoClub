@@ -15,11 +15,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView questions;
     Intent intent;
      ActivityOptions options;
-    CardView skillsmallCard, contactlargeCard, skilllargeCard, questionscontactsmallCard, questionscontactlargeCard;
-    TextView questions;
-    Intent intent;
-     ActivityOptions options;
-    Button skills;
     CardView skillsmallCard, contactlargeCard, skilllargeCard, questionssmallCard, questionslargeCard;
     CardView contactsmallCard;
     TextView contact,skills;
