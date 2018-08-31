@@ -11,7 +11,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class QuestionDetail extends AppCompatActivity {
-    public static String q1, q2, q3, q4;
     EditText ques1, ques2, ques3, ques4;
     TextView doneQuestion;
     View backView;
@@ -24,8 +23,6 @@ public class QuestionDetail extends AppCompatActivity {
         Intent intent = getIntent();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question_detail);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT)
-            getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         initUI();
     }
 

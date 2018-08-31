@@ -11,15 +11,12 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    Button contact, skills;
     TextView questions;
     Intent intent;
      ActivityOptions options;
-    CardView contactsmallCard,contactlargeCard,skillsmallCard,skilllargeCard,questionscontactsmallCard,questionscontactlargeCard;
-    Button skills, questions;
     CardView skillsmallCard, contactlargeCard, skilllargeCard, questionscontactsmallCard, questionscontactlargeCard;
     CardView contactsmallCard;
-    TextView contact;
+    TextView contact,skills;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,7 +59,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 break;
             case R.id.skills:
-                startActivity(new Intent(MainActivity.this, SkillDetail.class));
+                options = ActivityOptions.makeSceneTransitionAnimation(
+                        MainActivity.this,
+                        Pair.create((View) skillsmallCard, "skillButton"),
+                        Pair.create((View) skilllargeCard, "skillBack"));
+                intent = new Intent(MainActivity.this, SkillDetail.class);
+                MainActivity.this.startActivity(intent
+                        .putExtra("shared_element_transition_name", v.getTransitionName()), options.toBundle());
                 break;
             case R.id.questions:
                  options = ActivityOptions.makeSceneTransitionAnimation(
