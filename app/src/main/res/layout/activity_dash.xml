@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f8f8f8"
+    android:fitsSystemWindows="true"
+    tools:context="com.nsh.getintoclub.DashActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:background="#00000000"
+        android:elevation="10dp"
+        android:src="@drawable/black_trans_gradient" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/white"
+        android:rotation="-10"
+        android:scaleX="5"
+        android:translationY="-100dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:rotation="-10"
+        android:scaleX="5"
+        android:translationY="100dp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp">
+
+        <TextView
+            android:id="@+id/getText"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ps"
+            android:gravity="end"
+            android:text="Get"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/intoText"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/getText"
+            android:layout_marginTop="-8dp"
+            android:fontFamily="@font/ps"
+            android:gravity="end"
+            android:text="Into"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/usText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="-4dp"
+            android:layout_toRightOf="@id/intoText"
+            android:fontFamily="@font/psb"
+            android:text="Club"
+            android:textColor="@color/black"
+            android:textSize="40sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="32dp"
+        android:fontFamily="@font/ps"
+        android:text="Copyright\nAppTeam NITH"
+        android:textColor="@color/black"
+        android:textSize="11sp" />
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:clipToPadding="false"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="32dp" />
+
+</RelativeLayout>

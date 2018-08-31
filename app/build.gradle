@@ -30,6 +30,7 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:27.1.1'
     implementation 'com.google.firebase:firebase-auth:16.0.1'
     implementation 'com.google.firebase:firebase-database:16.0.1'
+    implementation 'com.github.rubensousa:gravitysnaphelper:1.5'
     implementation 'com.firebaseui:firebase-ui-auth:4.1.0'
     implementation 'com.google.firebase:firebase-core:16.0.1'
 }
