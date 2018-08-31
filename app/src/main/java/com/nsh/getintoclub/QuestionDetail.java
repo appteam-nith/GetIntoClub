@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class QuestionDetail extends AppCompatActivity {
+
     EditText ques1, ques2, ques3, ques4;
     TextView doneQuestion;
     View backView;

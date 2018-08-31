@@ -11,12 +11,19 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
     TextView questions;
     Intent intent;
      ActivityOptions options;
     CardView skillsmallCard, contactlargeCard, skilllargeCard, questionscontactsmallCard, questionscontactlargeCard;
+    TextView questions;
+    Intent intent;
+     ActivityOptions options;
+    Button skills;
+    CardView skillsmallCard, contactlargeCard, skilllargeCard, questionssmallCard, questionslargeCard;
     CardView contactsmallCard;
     TextView contact,skills;
+  
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,8 +40,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         contactlargeCard = findViewById(R.id.contactlargeCard);
         skillsmallCard = findViewById(R.id.skillsmallCard);
         skilllargeCard = findViewById(R.id.skilllargeCard);
-        questionscontactsmallCard = findViewById(R.id.questionssmallCard);
-        questionscontactlargeCard = findViewById(R.id.questionslargeCard);
+        questionssmallCard = findViewById(R.id.questionssmallCard);
+        questionslargeCard = findViewById(R.id.questionslargeCard);
         setupdata();
     }
 
@@ -70,13 +77,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.questions:
                  options = ActivityOptions.makeSceneTransitionAnimation(
                         MainActivity.this,
-                        Pair.create((View) questionscontactsmallCard, "QuestionButton"),
-                        Pair.create((View) questionscontactlargeCard, "QuestionBack"));
+                        Pair.create((View) questionssmallCard, "QuestionButton"),
+                        Pair.create((View) questionslargeCard, "QuestionBack"));
                 intent = new Intent(MainActivity.this, QuestionDetail.class);
                 MainActivity.this.startActivity(intent
                         .putExtra("shared_element_transition_name", v.getTransitionName()), options.toBundle());
                 break;
-
         }
     }
 }

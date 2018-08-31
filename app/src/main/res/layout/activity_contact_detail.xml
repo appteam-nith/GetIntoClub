@@ -214,7 +214,8 @@
         android:animateLayoutChanges="true"
         android:transitionName="contactButton"
         app:cardBackgroundColor="@color/blueDark"
-        app:cardCornerRadius="16dp">
+        app:cardCornerRadius="16dp"
+        >
 
         <RelativeLayout
             android:layout_width="wrap_content"
