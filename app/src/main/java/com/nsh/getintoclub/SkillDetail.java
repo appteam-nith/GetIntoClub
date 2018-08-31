@@ -1,4 +1,5 @@
 package com.nsh.getintoclub;
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
@@ -12,11 +13,13 @@ import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
 public class SkillDetail extends AppCompatActivity {
-EditText skillet,intersetet,achievmentset;
-TextView doneSkill;
-View backView;
-int rollLength;
+    public static String skill, interset, achievments;
+    EditText skillet, intersetet, achievmentset;
+    TextView doneSkill;
+    View backView;
+    int rollLength;
     Context context;
     RecyclerView recyclerView;
     RelativeLayout relativeLayout;
@@ -24,9 +27,9 @@ int rollLength;
     RecyclerView.LayoutManager recylerViewLayoutManager;
     String[] subjects =
             {
-                    "CSS","HTML","JAVA","PHP"," C ","C++","PHOTOSHOP","ANDROID","PYTHON"
+                    "CSS", "HTML", "JAVA", "PHP", " C ", "C++", "PHOTOSHOP", "ANDROID", "PYTHON"
             };
-public static String skill,interset,achievments;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Intent intent = getIntent();
@@ -36,33 +39,33 @@ public static String skill,interset,achievments;
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         initUI();
     }
-    public void initUI()
-    {
-        skillet=findViewById(R.id.skill);
-        intersetet=findViewById(R.id.interset);
-        achievmentset=findViewById(R.id.achievements);
-        doneSkill=findViewById(R.id.doneSkill);
-        backView=findViewById(R.id.backView);
+
+    public void initUI() {
+        skillet = findViewById(R.id.skill);
+        intersetet = findViewById(R.id.interset);
+        achievmentset = findViewById(R.id.achievements);
+        doneSkill = findViewById(R.id.doneSkill);
+        backView = findViewById(R.id.backView);
         setupdata();
     }
-    public void setupdata()
-    {
+
+    public void setupdata() {
 
 //        backView.setAlpha(0f);
 //        ObjectAnimator anim = ObjectAnimator.ofFloat(backView,"alpha",1);
 //        anim.setDuration(1000); // duration 3 seconds
 //        anim.setStartDelay(1000);
 //        anim.start();
-        skill=String.valueOf(skillet.getText());
-        interset=String.valueOf(intersetet.getText());
-        achievments=String.valueOf(achievmentset.getText());
+        skill = String.valueOf(skillet.getText());
+        interset = String.valueOf(intersetet.getText());
+        achievments = String.valueOf(achievmentset.getText());
         context = getApplicationContext();
 
         relativeLayout = (RelativeLayout) findViewById(R.id.relativelayout1);
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerview1);
 
-        recylerViewLayoutManager = new LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false);
+        recylerViewLayoutManager = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
 
         recyclerView.setLayoutManager(recylerViewLayoutManager);
 
@@ -70,15 +73,12 @@ public static String skill,interset,achievments;
 
         recyclerView.setAdapter(recyclerViewAdapter);
     }
-    public void onClick(View view)
-    {
-        rollLength=skillet.length();
-        if(rollLength==0)
-        {
+
+    public void onClick(View view) {
+        rollLength = skillet.length();
+        if (rollLength == 0) {
             Toast.makeText(this, "Enter atleast one skill", Toast.LENGTH_SHORT).show();
-        }
-        else
-        {
+        } else {
 
         }
     }

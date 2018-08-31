@@ -1,11 +1,9 @@
 package com.nsh.getintoclub;
 
 import android.app.ActivityOptions;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v4.app.ActivityOptionsCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.util.Pair;
 import android.view.View;
@@ -18,6 +16,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Intent intent;
      ActivityOptions options;
     CardView contactsmallCard,contactlargeCard,skillsmallCard,skilllargeCard,questionscontactsmallCard,questionscontactlargeCard;
+    Button skills, questions;
+    CardView skillsmallCard, contactlargeCard, skilllargeCard, questionscontactsmallCard, questionscontactlargeCard;
+    CardView contactsmallCard;
+    TextView contact;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

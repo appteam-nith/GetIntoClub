@@ -11,11 +11,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class QuestionDetail extends AppCompatActivity {
+    public static String q1, q2, q3, q4;
     EditText ques1, ques2, ques3, ques4;
     TextView doneQuestion;
     View backView;
     int rollLength;
     public static String q1, q2, q3, q4;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,11 +39,6 @@ public class QuestionDetail extends AppCompatActivity {
     }
 
     public void setupdata() {
-//        backView.setAlpha(0f);
-//        ObjectAnimator anim = ObjectAnimator.ofFloat(backView, "alpha", 1);
-//        anim.setDuration(1000);
-//        anim.setStartDelay(1000);
-//        anim.start();
         q1 = String.valueOf(ques1.getText());
         q2 = String.valueOf(ques2.getText());
         q3 = String.valueOf(ques3.getText());
