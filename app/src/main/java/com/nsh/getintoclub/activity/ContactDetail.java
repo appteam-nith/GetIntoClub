@@ -1,4 +1,4 @@
-package com.nsh.getintoclub;
+package com.nsh.getintoclub.activity;
 
 import android.animation.Animator;
 import android.animation.AnimatorSet;
@@ -14,32 +14,35 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class QuestionDetail extends AppCompatActivity {
+import com.nsh.getintoclub.R;
 
-    public static String q1="", q2="", q3="", q4="";
-    ScrollView scrollView;
-    EditText ques1, ques2, ques3, ques4;
-    TextView doneQuestion;
+public class ContactDetail extends AppCompatActivity {
+
+    public static String name="", roll="", branch="", mobile="", email="";
+    public static int RollLength;
+    EditText Name, RollNumber, Branch, Mobile, Email;
+    TextView doneContact;
     View backView;
-    int rollLength;
+    ScrollView scrollView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_question_detail);
+        setContentView(R.layout.activity_contact_detail);
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT)
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         initUI();
     }
 
     public void initUI() {
-        ques1 = findViewById(R.id.q1);
-        ques2 = findViewById(R.id.q2);
-        ques3 = findViewById(R.id.q3);
-        ques4 = findViewById(R.id.q4);
-        scrollView = findViewById(R.id.scrollView);
-        doneQuestion = findViewById(R.id.donequestion);
+        Name = findViewById(R.id.name);
+        RollNumber = findViewById(R.id.rollnumber);
+        Branch = findViewById(R.id.branch);
+        Mobile = findViewById(R.id.mobile);
+        Email = findViewById(R.id.email);
         backView = findViewById(R.id.backView);
+        scrollView = findViewById(R.id.scrollView);
+        doneContact = findViewById(R.id.donecontact);
         setupdata();
     }
 
@@ -52,9 +55,9 @@ public class QuestionDetail extends AppCompatActivity {
             }
         });
 
-        doneQuestion.setAlpha(0f);
+        doneContact.setAlpha(0f);
         scrollView.setAlpha(0f);
-        ObjectAnimator objectAnimator2 = ObjectAnimator.ofFloat(doneQuestion, "alpha", 0, 1);
+        ObjectAnimator objectAnimator2 = ObjectAnimator.ofFloat(doneContact, "alpha", 0, 1);
         ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(scrollView, "alpha", 0, 1);
         ObjectAnimator objectAnimator1 = ObjectAnimator.ofFloat(scrollView, "translationY", 50, 0);
         objectAnimator.setDuration(500);
@@ -91,16 +94,17 @@ public class QuestionDetail extends AppCompatActivity {
     }
 
     public void setupData() {
-        q1 = String.valueOf(ques1.getText());
-        q2 = String.valueOf(ques2.getText());
-        q3 = String.valueOf(ques3.getText());
-        q4 = String.valueOf(ques4.getText());
+        name = String.valueOf(Name.getText());
+        roll = String.valueOf(RollNumber.getText());
+        branch = String.valueOf(Branch.getText());
+        mobile = String.valueOf(Mobile.getText());
+        email = String.valueOf(Email.getText());
     }
 
     public void onClick(View view) {
         setupData();
-        rollLength = q1.length();
-        if (rollLength == 0) {
+        RollLength = roll.length();
+        if (RollLength == 0) {
             Toast.makeText(this, "Seems to be incomplete", Toast.LENGTH_SHORT).show();
         } else {
             onBackPressed();
@@ -112,12 +116,31 @@ public class QuestionDetail extends AppCompatActivity {
         super.onBackPressed();
         ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(scrollView, "alpha", 1, 0);
         objectAnimator.setDuration(200);
-        ObjectAnimator objectAnimator2 = ObjectAnimator.ofFloat(doneQuestion, "alpha", 1, 0);
+        ObjectAnimator objectAnimator2 = ObjectAnimator.ofFloat(doneContact, "alpha", 1, 0);
         objectAnimator2.setDuration(200);
         ObjectAnimator objectAnimator1 = ObjectAnimator.ofFloat(scrollView, "translationY", 0, 50);
         objectAnimator1.setDuration(200);
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.playTogether(objectAnimator, objectAnimator1, objectAnimator2);
         animatorSet.start();
+    }
+
+    public static class appteam extends AppCompatActivity {
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.appteam);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT)
+                getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+
+            findViewById(R.id.backBtn).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onBackPressed();
+                }
+            });
+        }
+
     }
 }

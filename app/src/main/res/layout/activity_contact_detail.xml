@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.nsh.getintoclub.ContactDetail">
+    tools:context="com.nsh.getintoclub.activity.ContactDetail">
 
     <View
         android:id="@+id/backView"
@@ -41,8 +41,7 @@
                 android:background="@drawable/white_gradient_top"
                 android:elevation="4dp" />
 
-            <ScrollView
-                xmlns:android="http://schemas.android.com/apk/res/android"
+            <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/scrollView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

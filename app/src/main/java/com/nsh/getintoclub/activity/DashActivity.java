@@ -1,4 +1,4 @@
-package com.nsh.getintoclub;
+package com.nsh.getintoclub.activity;
 
 import android.animation.Animator;
 import android.animation.AnimatorSet;
@@ -15,12 +15,12 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.AnticipateOvershootInterpolator;
-import android.view.animation.DecelerateInterpolator;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.rubensousa.gravitysnaphelper.GravitySnapHelper;
+import com.nsh.getintoclub.R;
 import com.nsh.getintoclub.adapter.MainAdapter;
 import com.nsh.getintoclub.model.Quote;
 
@@ -114,7 +114,7 @@ public class DashActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (ContactDetail.roll.length() > 0 && SkillDetail.skillet.length() > 0) {
-                    Toast.makeText(DashActivity.this, "Submitting", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(DashActivity.this, "Submitted", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(DashActivity.this, database.class));
                 } else
                     Toast.makeText(DashActivity.this, "Seams like you missed entering Roll Number or Skills.", Toast.LENGTH_SHORT).show();
@@ -124,7 +124,7 @@ public class DashActivity extends AppCompatActivity {
         knowApp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(DashActivity.this, appteam.class));
+                startActivity(new Intent(DashActivity.this, ContactDetail.appteam.class));
             }
         });
     }

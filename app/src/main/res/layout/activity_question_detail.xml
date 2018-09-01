@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.nsh.getintoclub.ContactDetail">
+    tools:context="com.nsh.getintoclub.activity.ContactDetail">
 
     <View
         android:id="@+id/backView"
@@ -44,8 +44,8 @@
                 android:elevation="4dp" />
 
             <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
                 android:id="@+id/scrollView"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:padding="8dp"
@@ -78,11 +78,11 @@
                         android:background="@drawable/green_corner_box"
                         android:fontFamily="@font/ps"
                         android:gravity="top|left"
-                        android:hint="  Write your answer here..."
+                        android:hint="Write your answer here."
                         android:minLines="3"
                         android:paddingBottom="8dp"
-                        android:paddingLeft="8dp"
-                        android:paddingRight="8dp"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
                         android:paddingTop="8dp"
                         android:textSize="17sp" />
 
@@ -108,11 +108,11 @@
                         android:background="@drawable/green_corner_box"
                         android:fontFamily="@font/ps"
                         android:gravity="top|left"
-                        android:hint="  Write your answer here..."
+                        android:hint="Write your answer here."
                         android:minLines="3"
                         android:paddingBottom="8dp"
-                        android:paddingLeft="8dp"
-                        android:paddingRight="8dp"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
                         android:paddingTop="8dp"
                         android:textSize="17sp" />
 
@@ -138,11 +138,11 @@
                         android:background="@drawable/green_corner_box"
                         android:fontFamily="@font/ps"
                         android:gravity="top|left"
-                        android:hint="  Write your answer here..."
+                        android:hint="Write your answer here."
                         android:minLines="3"
                         android:paddingBottom="8dp"
-                        android:paddingLeft="8dp"
-                        android:paddingRight="8dp"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
                         android:paddingTop="8dp"
                         android:textSize="17sp" />
 
@@ -168,11 +168,11 @@
                         android:background="@drawable/green_corner_box"
                         android:fontFamily="@font/ps"
                         android:gravity="top|left"
-                        android:hint="  Write your answer here..."
+                        android:hint="Write your answer here."
                         android:minLines="3"
                         android:paddingBottom="8dp"
-                        android:paddingLeft="8dp"
-                        android:paddingRight="8dp"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
                         android:paddingTop="8dp"
                         android:textSize="17sp" />
 

@@ -1,4 +1,4 @@
-package com.nsh.getintoclub;
+package com.nsh.getintoclub.activity;
 
 import android.app.ActivityOptions;
 import android.content.Intent;
@@ -8,6 +8,8 @@ import android.support.v7.widget.CardView;
 import android.util.Pair;
 import android.view.View;
 import android.widget.TextView;
+
+import com.nsh.getintoclub.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
