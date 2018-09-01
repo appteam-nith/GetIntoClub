@@ -15,7 +15,7 @@ import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
-    List<View> itemViewList = new ArrayList<>();
+    public static List<View> itemViewList = new ArrayList<>();
     String[] SubjectValues;
     Context context;
     View view1;
@@ -46,103 +46,48 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         for (int i = 0; i < numPosition; i++) {
             numposi[i] = 0;
         }
-        holder.textView.setText(SubjectValues[position]);
+        holder.textView.setText(SkillDetail.subjects[position]);
         holder.textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                switch (position) {
-                    case 0:
-                        setData(position, numposi);
-                        break;
-                    case 1:
-                        setData(position, numposi);
-                        break;
-                    case 2:
-                        setData(position, numposi);
-                        break;
-
-                    case 3:
-                        setData(position, numposi);
-                        break;
-
-                    case 4:
-                        setData(position, numposi);
-                        break;
-
-                    case 5:
-                        setData(position, numposi);
-                        break;
-
-                    case 6:
-                        setData(position, numposi);
-                        break;
-
-                    case 7:
-                        setData(position, numposi);
-                        break;
-
-                    case 8:
-                        setData(position, numposi);
-                        break;
-
-                }
+                setData1(position);
 
             }
         });
 
     }
 
-    public void setData(int position, int[] numposi) {
-        numposi[position] += 1;
-        if (numposi[position] % 2 == 1) {
-            add(position);
-            itemViewList.get(position).setBackgroundResource(R.color.redLight);
+    public void setData1(int position) {
+        String description = SkillDetail.skillet.getText().toString();
+        String[] values = description.split(" ");
+        int i;
+        for (i = 0; i < values.length; i++) {
+            if (values[i].equals(SkillDetail.subjects[position])) {
+                values[i] = "null";
+                break;
+            }
+        }
+        SkillDetail.skillet.getText().clear();
+        if (i == values.length) {
+            for (i = 0; i < values.length; i++) {
+                if (values[i] != "null")
+                    SkillDetail.skillet.append(values[i] + " ");
+            }
+            SkillDetail.skillet.append(SkillDetail.subjects[position]);
         } else {
-            delete(position);
-            itemViewList.get(position).setBackgroundResource(R.color.white);
-        }
-    }
-
-    public void add(int p) {
-        int i;
-        for (i = 0; i < selected.size(); i++) {
-            if (selected.get(i) == SkillDetail.subjects[p]) {
-                break;
+            for (i = 0; i < values.length; i++) {
+                if (values[i] != "null")
+                    SkillDetail.skillet.append(values[i] + " ");
             }
-        }
-        if (i == selected.size())
-            selected.add(SkillDetail.subjects[p]);
-        SkillDetail.skillet.setText("");
-        for (i = 0; i < selected.size(); i++) {
-            if (selected.get(i) != "")
-                SkillDetail.skillet.append(selected.get(i));
-        }
 
-    }
-
-    public void delete(int p) {
-        int i;
-        for (i = 0; i < selected.size(); i++) {
-            if (selected.get(i) == SkillDetail.subjects[p]) {
-                break;
-            }
         }
-        if (i != selected.size())
-            selected.set(i, "");
-        SkillDetail.skillet.setText("");
-        for (i = 0; i < selected.size(); i++) {
-            if (selected.get(i) != "")
-                SkillDetail.skillet.append(selected.get(i));
-        }
-
-
     }
 
     @Override
     public int getItemCount() {
 
-        return SubjectValues.length;
+        return SkillDetail.subjects.length;
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

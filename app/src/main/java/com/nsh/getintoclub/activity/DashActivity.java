@@ -3,14 +3,18 @@ package com.nsh.getintoclub.activity;
 import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SnapHelper;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
@@ -24,6 +28,8 @@ import com.nsh.getintoclub.R;
 import com.nsh.getintoclub.adapter.MainAdapter;
 import com.nsh.getintoclub.model.Quote;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,9 +46,30 @@ public class DashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dash);
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT)
-            getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-        initUI();
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT )
+            if (!hasNavigationBar()) {
+                getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+            }
+            else{
+                getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN , WindowManager.LayoutParams.FLAG_FULLSCREEN);
+            }
+            initUI();
+    }
+
+    @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
+    @SuppressLint("PrivateApi")
+    public static Boolean hasNavigationBar() {
+        try {
+            Class<?> serviceManager = Class.forName("android.os.ServiceManager");
+            IBinder serviceBinder = (IBinder) serviceManager.getMethod("getService", String.class).invoke(serviceManager, "window");
+            Class<?> stub = Class.forName("android.view.IWindowManager$Stub");
+            Object windowManagerService = stub.getMethod("asInterface", IBinder.class).invoke(stub, serviceBinder);
+            Method hasNavigationBar = windowManagerService.getClass().getMethod("hasNavigationBar");
+            return (boolean) hasNavigationBar.invoke(windowManagerService);
+        } catch (ClassNotFoundException | ClassCastException | NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+            Log.w("YOUR_TAG_HERE", "Couldn't determine whether the device has a navigation bar", e);
+            return null;
+        }
     }
 
     public void initUI() {
@@ -107,7 +134,6 @@ public class DashActivity extends AppCompatActivity {
         snapHelperStart.attachToRecyclerView(recyclerView);
         recyclerView.setAdapter(mainAdapter);
         recyclerView.scrollToPosition(2);
-
 
 
         submitBtn.setOnClickListener(new View.OnClickListener() {

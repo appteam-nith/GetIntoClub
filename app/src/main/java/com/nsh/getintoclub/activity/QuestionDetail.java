@@ -12,13 +12,12 @@ import android.view.animation.AnticipateOvershootInterpolator;
 import android.widget.EditText;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.nsh.getintoclub.R;
 
 public class QuestionDetail extends AppCompatActivity {
 
-    public static String q1="", q2="", q3="", q4="";
+    public static String q1 = "", q2 = "", q3 = "", q4 = "";
     ScrollView scrollView;
     EditText ques1, ques2, ques3, ques4;
     TextView doneQuestion;
@@ -42,6 +41,14 @@ public class QuestionDetail extends AppCompatActivity {
         scrollView = findViewById(R.id.scrollView);
         doneQuestion = findViewById(R.id.donequestion);
         backView = findViewById(R.id.backView);
+        if (q1.length() > 0)
+            ques1.setText(q1);
+        if (q2.length() > 0)
+            ques2.setText(q2);
+        if (q3.length() > 0)
+            ques3.setText(q3);
+        if (q4.length() > 0)
+            ques4.setText(q4);
         setupdata();
     }
 
@@ -101,12 +108,7 @@ public class QuestionDetail extends AppCompatActivity {
 
     public void onClick(View view) {
         setupData();
-        rollLength = q1.length();
-        if (rollLength == 0) {
-            Toast.makeText(this, "Seems to be incomplete", Toast.LENGTH_SHORT).show();
-        } else {
-            onBackPressed();
-        }
+        onBackPressed();
     }
 
     @Override
