@@ -1,6 +1,7 @@
 package com.nsh.getintoclub;
 
 import android.animation.ObjectAnimator;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +12,8 @@ import android.support.v7.widget.SnapHelper;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.github.rubensousa.gravitysnaphelper.GravitySnapHelper;
 import com.nsh.getintoclub.adapter.MainAdapter;
@@ -25,7 +28,6 @@ public class DashActivity extends AppCompatActivity {
     MainAdapter mainAdapter;
     List<Quote> quoteList;
     CardView submitBtn;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,7 +61,11 @@ public class DashActivity extends AppCompatActivity {
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //setIntentHere
+
+                Toast.makeText(DashActivity.this, "Submitting", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(DashActivity.this, database.class);
+                startActivity(i);
+
             }
         });
     }

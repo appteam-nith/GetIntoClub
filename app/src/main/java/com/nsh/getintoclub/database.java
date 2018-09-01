@@ -1,23 +1,28 @@
 package com.nsh.getintoclub;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class database extends AppCompatActivity{
+    Intent i = getIntent();
     private DatabaseReference mDatabase;
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.data);
+        setContentView(R.layout.activity_dash);
        initUI();
     }
     public void initUI()
     {
         mDatabase = FirebaseDatabase.getInstance().getReference();
+        if (ContactDetail.RollLength == 0 || SkillDetail.skillet.length() == 0)
+            Toast.makeText(this, "Please Enter Your Roll Number And At Least One Skill", Toast.LENGTH_SHORT).show();
+        else
         writeNewUser(ContactDetail.roll);
     }
     private void writeNewUser(String roll) {
