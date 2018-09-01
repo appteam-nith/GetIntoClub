@@ -20,9 +20,6 @@ import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Font;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
-import com.nsh.getintoclub.activity.ContactDetail;
-import com.nsh.getintoclub.activity.QuestionDetail;
-import com.nsh.getintoclub.activity.SkillDetail;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -43,7 +40,7 @@ import static com.nsh.getintoclub.activity.SkillDetail.achievments;
 import static com.nsh.getintoclub.activity.SkillDetail.interset;
 import static com.nsh.getintoclub.activity.SkillDetail.skill;
 
-public class database extends AppCompatActivity {
+public class Database extends AppCompatActivity {
 
     private DatabaseReference mDatabase;
     String[] head = {"Name : ", "Roll No. : ", "Branch : ", "Mobile No. : ", "E-Mail : ", "Skills : ", "Area of Interest : ", "Achievments : ", "Why should we select you? ", "What will you do for our club? ", "What are your expectations from us?", "Do you prefer working independently or in a team? "};
@@ -76,15 +73,15 @@ public class database extends AppCompatActivity {
 
         mDatabase.child(roll).child("Name").setValue(ContactDetail.name);
         mDatabase.child(roll).child("Branch").setValue(ContactDetail.branch);
-        mDatabase.child(roll).child("E-mail").setValue(ContactDetail.email);
+        mDatabase.child(roll).child("Email").setValue(ContactDetail.email);
         mDatabase.child(roll).child("Mobile").setValue(ContactDetail.mobile);
         mDatabase.child(roll).child("Skills").setValue(SkillDetail.skill);
         mDatabase.child(roll).child("Area of Interest").setValue(SkillDetail.interset);
         mDatabase.child(roll).child("Achievements").setValue(SkillDetail.achievments);
-        mDatabase.child(roll).child("Ques.1").setValue(QuestionDetail.q1);
-        mDatabase.child(roll).child("Ques.2").setValue(QuestionDetail.q2);
-        mDatabase.child(roll).child("Ques.3").setValue(QuestionDetail.q3);
-        mDatabase.child(roll).child("Ques.4").setValue(QuestionDetail.q4);
+        mDatabase.child(roll).child("Ques1").setValue(QuestionDetail.q1);
+        mDatabase.child(roll).child("Ques2").setValue(QuestionDetail.q2);
+        mDatabase.child(roll).child("Ques3").setValue(QuestionDetail.q3);
+        mDatabase.child(roll).child("Ques4").setValue(QuestionDetail.q4);
     }
 
     private void createPdfWrapper() throws FileNotFoundException, DocumentException {

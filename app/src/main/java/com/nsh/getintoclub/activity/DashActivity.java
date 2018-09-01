@@ -115,7 +115,7 @@ public class DashActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (ContactDetail.roll.length() > 0 && SkillDetail.skillet.length() > 0) {
                     Toast.makeText(DashActivity.this, "Submitted", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(DashActivity.this, database.class));
+                    startActivity(new Intent(DashActivity.this, Database.class));
                 } else
                     Toast.makeText(DashActivity.this, "Seams like you missed entering Roll Number or Skills.", Toast.LENGTH_SHORT).show();
             }
@@ -124,7 +124,7 @@ public class DashActivity extends AppCompatActivity {
         knowApp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(DashActivity.this, ContactDetail.appteam.class));
+                startActivity(new Intent(DashActivity.this, AboutAppteam.class));
             }
         });
     }

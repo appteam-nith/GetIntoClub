@@ -125,22 +125,5 @@ public class ContactDetail extends AppCompatActivity {
         animatorSet.start();
     }
 
-    public static class appteam extends AppCompatActivity {
 
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.appteam);
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT)
-                getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-
-            findViewById(R.id.backBtn).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    onBackPressed();
-                }
-            });
-        }
-
-    }
 }

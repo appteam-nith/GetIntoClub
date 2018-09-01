@@ -13,6 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".activity.MainActivity" />
         <activity
             android:name=".activity.ContactDetail"
@@ -21,13 +22,10 @@
             android:name=".activity.SkillDetail"
             android:theme="@style/Theme.Transparent" />
         <activity
-            android:name=".test"
-            android:theme="@style/Theme.Transparent" />
-        <activity
             android:name=".activity.QuestionDetail"
             android:theme="@style/Theme.Transparent" />
         <activity
-            android:name=".activity.database"
+            android:name=".activity.Database"
             android:theme="@style/Theme.Transparent" />
         <activity
             android:name=".activity.DashActivity"
@@ -39,7 +37,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.ContactDetail$appteam"
+            android:name=".activity.AboutAppteam"
             android:theme="@style/Theme.Transparent" />
     </application>
 

@@ -37,28 +37,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="8dp"
                 android:background="@drawable/white_gradient_top"
                 android:elevation="4dp" />
 
-            <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            <ScrollView
+                xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/scrollView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:padding="8dp"
                 android:scrollbars="none">
 
                 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:paddingBottom="32dp"
+                    android:paddingTop="8dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="16dp"
-                        android:layout_marginTop="8dp"
                         android:fontFamily="@font/psb"
                         android:padding="8dp"
                         android:text="Name"
@@ -156,6 +158,7 @@
                         android:background="@drawable/blue_corner_box"
                         android:fontFamily="@font/ps"
                         android:hint="thisisnsh@gmail.com"
+                        android:inputType="textEmailAddress"
                         android:paddingBottom="8dp"
                         android:paddingLeft="16dp"
                         android:paddingRight="16dp"
@@ -196,7 +199,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_alignParentBottom="true"
-                android:layout_marginBottom="8dp"
                 android:background="@drawable/white_gradient" />
         </RelativeLayout>
     </android.support.v7.widget.CardView>
