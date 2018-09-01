@@ -16,7 +16,7 @@ import android.widget.Toast;
 
 public class SkillDetail extends AppCompatActivity {
     public static String skill, interset, achievments;
-    EditText skillet, intersetet, achievmentset;
+    public static EditText skillet, intersetet, achievmentset;
     TextView doneSkill;
     View backView;
     int rollLength;
@@ -25,9 +25,12 @@ public class SkillDetail extends AppCompatActivity {
     RelativeLayout relativeLayout;
     RecyclerView.Adapter recyclerViewAdapter;
     RecyclerView.LayoutManager recylerViewLayoutManager;
-    String[] subjects =
+    public static String[] subjects =
             {
-                    "CSS", "HTML", "JAVA", "PHP", " C ", "C++", "PHOTOSHOP", "ANDROID", "PYTHON"
+                    " CSS", " HTML", " JAVA", " PHP", " C ", " C++", " PHOTOSHOP", " ANDROID", " PYTHON"
+//                    ,"NODE JS",
+//                    "JANGO","MONGO DB","JAVASCRIPT","AWS"
+//                    ,"REACT NATIVE","FLASK","RUBY","JQUERY","SQL","AFTER EFFECTS"
             };
 
     @Override
