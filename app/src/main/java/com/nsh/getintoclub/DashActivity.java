@@ -1,12 +1,15 @@
 package com.nsh.getintoclub;
 
+import android.animation.ObjectAnimator;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SnapHelper;
 import android.view.Gravity;
+import android.view.View;
 import android.view.WindowManager;
 
 import com.github.rubensousa.gravitysnaphelper.GravitySnapHelper;
@@ -21,16 +24,20 @@ public class DashActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     MainAdapter mainAdapter;
     List<Quote> quoteList;
+    CardView submitBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dash);
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT)
+            getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         initUI();
     }
 
     public void initUI() {
         recyclerView = findViewById(R.id.recyclerView);
+        submitBtn = findViewById(R.id.submitBtn);
         setupData();
     }
 
@@ -48,5 +55,12 @@ public class DashActivity extends AppCompatActivity {
         snapHelperStart.attachToRecyclerView(recyclerView);
         recyclerView.setAdapter(mainAdapter);
         recyclerView.scrollToPosition(2);
+
+        submitBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //setIntentHere
+            }
+        });
     }
 }

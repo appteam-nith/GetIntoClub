@@ -15,8 +15,7 @@
         </activity>
         <activity
             android:name=".ContactDetail"
-            android:theme="@style/Theme.Transparent"
-            >
+            android:theme="@style/Theme.Transparent">
 
         </activity>
         <activity

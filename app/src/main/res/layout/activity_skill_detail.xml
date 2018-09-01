@@ -190,6 +190,7 @@
                 android:onClick="onClick"
                 android:padding="8dp"
                 android:text="Done"
+                android:fontFamily="@font/ps"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:theme="@style/AppTheme.RedRipple" />
