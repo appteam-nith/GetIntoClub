@@ -49,7 +49,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
         holder.title.setText(quote.getTitle());
         holder.textView.setText(quote.getQuote());
         holder.relativeLayout.setBackground(quote.getDrawable());
-        
+
         switch (position) {
 
             case 0:
