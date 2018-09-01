@@ -110,6 +110,15 @@
                         android:paddingTop="8dp"
                         android:textColor="#000"
                         android:textSize="17dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="* Roll No. is mandatory"
+                        android:layout_marginRight="16dp"
+                        android:layout_gravity="end"
+                        android:fontFamily="@font/psb"
+                        android:textColor="@color/redDark"
+                        android:textSize="10sp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
