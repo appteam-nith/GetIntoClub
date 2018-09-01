@@ -163,8 +163,8 @@
                                 <ImageView
                                     android:layout_width="match_parent"
                                     android:layout_height="115dp"
-                                    android:padding="16dp"
                                     android:layout_margin="4dp"
+                                    android:padding="16dp"
                                     android:src="@drawable/hack" />
 
                                 <TextView
@@ -197,8 +197,8 @@
                                 <ImageView
                                     android:layout_width="match_parent"
                                     android:layout_height="115dp"
-                                    android:padding="8dp"
                                     android:layout_margin="4dp"
+                                    android:padding="8dp"
                                     android:src="@drawable/hill" />
 
                                 <TextView
@@ -231,8 +231,8 @@
                                 <ImageView
                                     android:layout_width="match_parent"
                                     android:layout_height="115dp"
-                                    android:padding="8dp"
                                     android:layout_margin="4dp"
+                                    android:padding="8dp"
                                     android:src="@drawable/nimbus" />
 
                                 <TextView
@@ -292,8 +292,8 @@
         android:id="@+id/backBtn"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginTop="32dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginTop="32dp"
         android:src="@drawable/back_icon" />
 
 </RelativeLayout>

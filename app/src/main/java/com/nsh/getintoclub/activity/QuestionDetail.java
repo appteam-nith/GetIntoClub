@@ -1,61 +1,47 @@
-package com.nsh.getintoclub;
+package com.nsh.getintoclub.activity;
 
 import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.AnticipateOvershootInterpolator;
 import android.widget.EditText;
-import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class SkillDetail extends AppCompatActivity {
+import com.nsh.getintoclub.R;
 
-    public static String skill="", interset="", achievments="";
-    public static EditText skillet, intersetet, achievmentset;
-    public static String[] subjects =
-            {
-                    " CSS", " HTML", " JAVA", " PHP", " C ", " C++", " PHOTOSHOP", " ANDROID", " PYTHON"
-//                    ,"NODE JS",
-//                    "JANGO","MONGO DB","JAVASCRIPT","AWS"
-//                    ,"REACT NATIVE","FLASK","RUBY","JQUERY","SQL","AFTER EFFECTS"
-            };
-    TextView doneSkill;
+public class QuestionDetail extends AppCompatActivity {
+
+    public static String q1="", q2="", q3="", q4="";
+    ScrollView scrollView;
+    EditText ques1, ques2, ques3, ques4;
+    TextView doneQuestion;
     View backView;
     int rollLength;
-    ScrollView scrollView;
-    Context context;
-    RecyclerView recyclerView;
-    RelativeLayout relativeLayout;
-    RecyclerView.Adapter recyclerViewAdapter;
-    RecyclerView.LayoutManager recylerViewLayoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
-        setContentView(R.layout.activity_skill_detail);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT)
+        setContentView(R.layout.activity_question_detail);
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT)
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         initUI();
     }
 
     public void initUI() {
-        skillet = findViewById(R.id.skill);
-        intersetet = findViewById(R.id.interset);
-        achievmentset = findViewById(R.id.achievements);
-        doneSkill = findViewById(R.id.doneSkill);
-        backView = findViewById(R.id.backView);
+        ques1 = findViewById(R.id.q1);
+        ques2 = findViewById(R.id.q2);
+        ques3 = findViewById(R.id.q3);
+        ques4 = findViewById(R.id.q4);
         scrollView = findViewById(R.id.scrollView);
+        doneQuestion = findViewById(R.id.donequestion);
+        backView = findViewById(R.id.backView);
         setupdata();
     }
 
@@ -68,17 +54,9 @@ public class SkillDetail extends AppCompatActivity {
             }
         });
 
-        context = getApplicationContext();
-        relativeLayout = (RelativeLayout) findViewById(R.id.relativelayout1);
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerview1);
-        recylerViewLayoutManager = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
-        recyclerView.setLayoutManager(recylerViewLayoutManager);
-        recyclerViewAdapter = new RecyclerViewAdapter(context, subjects);
-        recyclerView.setAdapter(recyclerViewAdapter);
-
-        doneSkill.setAlpha(0f);
+        doneQuestion.setAlpha(0f);
         scrollView.setAlpha(0f);
-        ObjectAnimator objectAnimator2 = ObjectAnimator.ofFloat(doneSkill, "alpha", 0, 1);
+        ObjectAnimator objectAnimator2 = ObjectAnimator.ofFloat(doneQuestion, "alpha", 0, 1);
         ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(scrollView, "alpha", 0, 1);
         ObjectAnimator objectAnimator1 = ObjectAnimator.ofFloat(scrollView, "translationY", 50, 0);
         objectAnimator.setDuration(500);
@@ -115,18 +93,17 @@ public class SkillDetail extends AppCompatActivity {
     }
 
     public void setupData() {
-
-        skill = String.valueOf(skillet.getText());
-        interset = String.valueOf(intersetet.getText());
-        achievments = String.valueOf(achievmentset.getText());
-        System.out.println(skill);
+        q1 = String.valueOf(ques1.getText());
+        q2 = String.valueOf(ques2.getText());
+        q3 = String.valueOf(ques3.getText());
+        q4 = String.valueOf(ques4.getText());
     }
 
     public void onClick(View view) {
         setupData();
-        rollLength = skillet.length();
+        rollLength = q1.length();
         if (rollLength == 0) {
-            Toast.makeText(this, "Enter atleast one skill", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Seems to be incomplete", Toast.LENGTH_SHORT).show();
         } else {
             onBackPressed();
         }
@@ -137,7 +114,7 @@ public class SkillDetail extends AppCompatActivity {
         super.onBackPressed();
         ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(scrollView, "alpha", 1, 0);
         objectAnimator.setDuration(200);
-        ObjectAnimator objectAnimator2 = ObjectAnimator.ofFloat(doneSkill, "alpha", 1, 0);
+        ObjectAnimator objectAnimator2 = ObjectAnimator.ofFloat(doneQuestion, "alpha", 1, 0);
         objectAnimator2.setDuration(200);
         ObjectAnimator objectAnimator1 = ObjectAnimator.ofFloat(scrollView, "translationY", 0, 50);
         objectAnimator1.setDuration(200);

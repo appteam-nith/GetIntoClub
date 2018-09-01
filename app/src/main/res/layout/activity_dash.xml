@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#f8f8f8"
     android:fitsSystemWindows="true"
-    tools:context="com.nsh.getintoclub.DashActivity">
+    tools:context="com.nsh.getintoclub.activity.DashActivity">
 
     <ImageView
         android:layout_width="match_parent"

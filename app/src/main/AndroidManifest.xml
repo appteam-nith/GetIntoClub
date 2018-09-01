@@ -13,24 +13,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" />
+        <activity android:name=".activity.MainActivity" />
         <activity
-            android:name=".ContactDetail"
+            android:name=".activity.ContactDetail"
             android:theme="@style/Theme.Transparent" />
         <activity
-            android:name=".SkillDetail"
+            android:name=".activity.SkillDetail"
             android:theme="@style/Theme.Transparent" />
         <activity
             android:name=".test"
             android:theme="@style/Theme.Transparent" />
         <activity
-            android:name=".QuestionDetail"
+            android:name=".activity.QuestionDetail"
             android:theme="@style/Theme.Transparent" />
         <activity
-            android:name=".database"
+            android:name=".activity.database"
             android:theme="@style/Theme.Transparent" />
         <activity
-            android:name=".DashActivity"
+            android:name=".activity.DashActivity"
             android:theme="@style/Theme.Transparent">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -39,7 +39,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".appteam"
+            android:name=".activity.ContactDetail$appteam"
             android:theme="@style/Theme.Transparent" />
     </application>
 

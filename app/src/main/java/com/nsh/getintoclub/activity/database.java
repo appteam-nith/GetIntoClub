@@ -1,6 +1,5 @@
-package com.nsh.getintoclub;
+package com.nsh.getintoclub.activity;
 
-import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -12,16 +11,18 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Font;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
+import com.nsh.getintoclub.activity.ContactDetail;
+import com.nsh.getintoclub.activity.QuestionDetail;
+import com.nsh.getintoclub.activity.SkillDetail;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -29,69 +30,76 @@ import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.util.List;
 
-import static com.nsh.getintoclub.ContactDetail.branch;
-import static com.nsh.getintoclub.ContactDetail.email;
-import static com.nsh.getintoclub.ContactDetail.mobile;
-import static com.nsh.getintoclub.ContactDetail.name;
-import static com.nsh.getintoclub.ContactDetail.roll;
-import static com.nsh.getintoclub.QuestionDetail.q1;
-import static com.nsh.getintoclub.QuestionDetail.q2;
-import static com.nsh.getintoclub.QuestionDetail.q3;
-import static com.nsh.getintoclub.QuestionDetail.q4;
-import static com.nsh.getintoclub.SkillDetail.achievments;
-import static com.nsh.getintoclub.SkillDetail.interset;
-import static com.nsh.getintoclub.SkillDetail.skill;
+import static com.nsh.getintoclub.activity.ContactDetail.branch;
+import static com.nsh.getintoclub.activity.ContactDetail.email;
+import static com.nsh.getintoclub.activity.ContactDetail.mobile;
+import static com.nsh.getintoclub.activity.ContactDetail.name;
+import static com.nsh.getintoclub.activity.ContactDetail.roll;
+import static com.nsh.getintoclub.activity.QuestionDetail.q1;
+import static com.nsh.getintoclub.activity.QuestionDetail.q2;
+import static com.nsh.getintoclub.activity.QuestionDetail.q3;
+import static com.nsh.getintoclub.activity.QuestionDetail.q4;
+import static com.nsh.getintoclub.activity.SkillDetail.achievments;
+import static com.nsh.getintoclub.activity.SkillDetail.interset;
+import static com.nsh.getintoclub.activity.SkillDetail.skill;
 
-public class PdfCreatorActivity extends AppCompatActivity {
+public class database extends AppCompatActivity {
 
+    private DatabaseReference mDatabase;
     String[] head = {"Name : ", "Roll No. : ", "Branch : ", "Mobile No. : ", "E-Mail : ", "Skills : ", "Area of Interest : ", "Achievments : ", "Why should we select you? ", "What will you do for our club? ", "What are your expectations from us?", "Do you prefer working independently or in a team? "};
     String[] val = {(name.equals("") ? " " : name), (roll.equals("") ? " " : roll), (branch.equals("") ? " " : branch), (mobile.equals("") ? " " : mobile), (email.equals("") ? " " : email), (skill.equals("") ? " " : skill), (interset.equals("") ? " " : interset), (achievments.equals("") ? " " : achievments), (q1.equals("") ? " " : q1), (q2.equals("") ? " " : q2), (q3.equals("") ? " " : q3), (q4.equals("") ? " " : q4)};
     private static final String TAG = "PdfCreatorActivity";
-    private EditText mContentEditText;
-    private Button mCreateButton;
     private File pdfFile;
     final private int REQUEST_CODE_ASK_PERMISSIONS = 111;
 
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pdf_creator);
+        initUI();
+        try {
+            createPdfWrapper();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (DocumentException e) {
+            e.printStackTrace();
+        }
+    }
 
-        mContentEditText = (EditText) findViewById(R.id.edit_text_content);
-        mCreateButton = (Button) findViewById(R.id.button_create);
-        mCreateButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mContentEditText.getText().toString().isEmpty()) {
-                    mContentEditText.setError("Body is empty");
-                    mContentEditText.requestFocus();
-                    return;
-                }
-                try {
-                    createPdfWrapper();
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                } catch (DocumentException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
+    public void initUI() {
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        if (ContactDetail.RollLength == 0 || SkillDetail.skillet.length() == 0)
+            Toast.makeText(this, "Please Enter Your Roll Number And At Least One Skill", Toast.LENGTH_SHORT).show();
+        else
+            writeNewUser(ContactDetail.roll);
+    }
 
+    private void writeNewUser(String roll) {
+
+        mDatabase.child(roll).child("Name").setValue(ContactDetail.name);
+        mDatabase.child(roll).child("Branch").setValue(ContactDetail.branch);
+        mDatabase.child(roll).child("E-mail").setValue(ContactDetail.email);
+        mDatabase.child(roll).child("Mobile").setValue(ContactDetail.mobile);
+        mDatabase.child(roll).child("Skills").setValue(SkillDetail.skill);
+        mDatabase.child(roll).child("Area of Interest").setValue(SkillDetail.interset);
+        mDatabase.child(roll).child("Achievements").setValue(SkillDetail.achievments);
+        mDatabase.child(roll).child("Ques.1").setValue(QuestionDetail.q1);
+        mDatabase.child(roll).child("Ques.2").setValue(QuestionDetail.q2);
+        mDatabase.child(roll).child("Ques.3").setValue(QuestionDetail.q3);
+        mDatabase.child(roll).child("Ques.4").setValue(QuestionDetail.q4);
     }
 
     private void createPdfWrapper() throws FileNotFoundException, DocumentException {
 
-        int hasWriteStoragePermission = ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        int hasWriteStoragePermission = ActivityCompat.checkSelfPermission(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE);
         if (hasWriteStoragePermission != PackageManager.PERMISSION_GRANTED) {
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                if (!shouldShowRequestPermissionRationale(Manifest.permission.WRITE_CONTACTS)) {
+                if (!shouldShowRequestPermissionRationale(android.Manifest.permission.WRITE_CONTACTS)) {
                     showMessageOKCancel("You need to allow access to Storage",
                             new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
                                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                                        requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                                        requestPermissions(new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE},
                                                 REQUEST_CODE_ASK_PERMISSIONS);
                                     }
                                 }
@@ -99,7 +107,7 @@ public class PdfCreatorActivity extends AppCompatActivity {
                     return;
                 }
 
-                requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                requestPermissions(new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE},
                         REQUEST_CODE_ASK_PERMISSIONS);
             }
             return;
@@ -122,7 +130,6 @@ public class PdfCreatorActivity extends AppCompatActivity {
                         e.printStackTrace();
                     }
                 } else {
-                    // Permission Denied
                     Toast.makeText(this, "WRITE_EXTERNAL Permission Denied", Toast.LENGTH_SHORT)
                             .show();
                 }
@@ -149,7 +156,7 @@ public class PdfCreatorActivity extends AppCompatActivity {
             Log.i(TAG, "Created a new directory for PDF");
         }
 
-        pdfFile = new File(docsFolder.getAbsolutePath(), "YourCV.pdf");
+        pdfFile = new File(docsFolder.getAbsolutePath(), "MyCV.pdf");
         OutputStream output = new FileOutputStream(pdfFile);
         Document document = new Document();
         PdfWriter.getInstance(document, output);
@@ -161,7 +168,7 @@ public class PdfCreatorActivity extends AppCompatActivity {
         document.add(new Paragraph("CURRICULUM VITAE" + "\n\n", bold1));
         for (int i = 0; i < 12; i++) {
             document.add(new Paragraph(head[i], bold));
-            document.add(new Paragraph(val[i], regular));
+            document.add(new Paragraph(val[i] + "\n", regular));
 
         }
         document.close();
@@ -187,3 +194,5 @@ public class PdfCreatorActivity extends AppCompatActivity {
         }
     }
 }
+
+

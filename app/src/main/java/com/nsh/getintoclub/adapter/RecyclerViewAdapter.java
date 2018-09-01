@@ -1,14 +1,14 @@
-package com.nsh.getintoclub;
+package com.nsh.getintoclub.adapter;
 
-import android.app.ActivityOptions;
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
-import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.nsh.getintoclub.R;
+import com.nsh.getintoclub.activity.SkillDetail;
 
 import java.util.ArrayList;
 import java.util.List;

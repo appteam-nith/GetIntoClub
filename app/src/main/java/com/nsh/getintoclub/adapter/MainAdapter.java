@@ -16,10 +16,10 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.nsh.getintoclub.ContactDetail;
-import com.nsh.getintoclub.QuestionDetail;
+import com.nsh.getintoclub.activity.ContactDetail;
+import com.nsh.getintoclub.activity.QuestionDetail;
 import com.nsh.getintoclub.R;
-import com.nsh.getintoclub.SkillDetail;
+import com.nsh.getintoclub.activity.SkillDetail;
 import com.nsh.getintoclub.model.Quote;
 
 import java.util.List;
