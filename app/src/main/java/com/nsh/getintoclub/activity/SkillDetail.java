@@ -23,14 +23,14 @@ import com.nsh.getintoclub.adapter.RecyclerViewAdapter;
 
 public class SkillDetail extends AppCompatActivity {
 
-    public static String skill="", interset="", achievments="";
+    public static String skill = "", interset = "", achievments = "";
     public static EditText skillet, intersetet, achievmentset;
     public static String[] subjects =
             {
-                    " CSS", " HTML", " JAVA", " PHP", " C ", " C++", " PHOTOSHOP", " ANDROID", " PYTHON"
-//                    ,"NODE JS",
-//                    "JANGO","MONGO DB","JAVASCRIPT","AWS"
-//                    ,"REACT NATIVE","FLASK","RUBY","JQUERY","SQL","AFTER EFFECTS"
+                    "Css", "HTML", "Java", "PHP", "C", "C++", "Photoshop", "Android", "Python"
+                    , "NodeJs",
+                    "Django", "MongoDB", "Javascript", "AWS"
+                    , "ReactNative", "Flask", "Ruby", "Jquery", "SQL", "AfterEffects"
             };
     TextView doneSkill;
     View backView;
@@ -59,6 +59,13 @@ public class SkillDetail extends AppCompatActivity {
         doneSkill = findViewById(R.id.doneSkill);
         backView = findViewById(R.id.backView);
         scrollView = findViewById(R.id.scrollView);
+        if (skill.length() > 0)
+            skillet.setText(skill);
+        if (interset.length() > 0)
+            intersetet.setText(interset);
+        if (achievments.length() > 0)
+            achievmentset.setText(achievments);
+
         setupdata();
     }
 

@@ -108,7 +108,7 @@
                         android:layout_below="@id/about"
                         android:layout_marginTop="8dp"
                         android:fontFamily="@font/ps"
-                        android:text="App Team NITH is one of the main technical teams of our college.We work all year round and organize many technical events at various levels.Our work involves mobile application development,we organize hackathons,workshops and promote a coding culture of NITH in general.Yearly, we develop an app during Hill'ffair as well as Nimbus ,which is the official app for the fest."
+                        android:text="App Team NITH is one of the main technical teams of our college. We work all year round and organize many technical events at various levels. Our work involves mobile application development, we organize hackathons, workshops and promote a coding culture of NITH in general. Yearly, we develop an app during Hill'ffair as well as Nimbus, which is the official app for the fest."
                         android:textColor="@color/black"
                         android:textSize="15sp" />
                 </RelativeLayout>

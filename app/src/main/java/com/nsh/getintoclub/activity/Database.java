@@ -15,10 +15,13 @@ import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.itextpdf.text.DocListener;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Element;
 import com.itextpdf.text.Font;
 import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.Rectangle;
 import com.itextpdf.text.pdf.PdfWriter;
 
 import java.io.File;
@@ -169,7 +172,20 @@ public class Database extends AppCompatActivity {
 
         }
         document.close();
-        previewPdf();
+        Toast.makeText(Database.this, "MyCV.pdf created in Documents.", Toast.LENGTH_SHORT).show();
+        finish();
+        ContactDetail.name = "";
+        ContactDetail.branch = "";
+        ContactDetail.email = "";
+        ContactDetail.mobile = "";
+        SkillDetail.skill = "";
+        SkillDetail.interset = "";
+        SkillDetail.achievments = "";
+        QuestionDetail.q1 = "";
+        QuestionDetail.q2 = "";
+        QuestionDetail.q3 = "";
+        QuestionDetail.q4 = "";
+        //        previewPdf();
 
     }
 
@@ -184,10 +200,10 @@ public class Database extends AppCompatActivity {
             intent.setAction(Intent.ACTION_VIEW);
             Uri uri = Uri.fromFile(pdfFile);
             intent.setDataAndType(uri, "application/pdf");
-
             startActivity(intent);
         } else {
             Toast.makeText(this, "Download a PDF Viewer to see the generated PDF", Toast.LENGTH_SHORT).show();
+            finish();
         }
     }
 }
