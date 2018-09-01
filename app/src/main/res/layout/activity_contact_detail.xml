@@ -26,7 +26,7 @@
         android:transitionName="backAnim"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="16dp"
-        app:cardElevation="0dp"
+        app:cardElevation="8dp"
         app:cardPreventCornerOverlap="true">
 
         <RelativeLayout
@@ -211,6 +211,7 @@
         android:layout_marginRight="32dp"
         android:animateLayoutChanges="true"
         android:transitionName="frontAnim"
+        app:cardElevation="10dp"
         app:cardBackgroundColor="@color/blueDark"
         app:cardCornerRadius="16dp">
 
