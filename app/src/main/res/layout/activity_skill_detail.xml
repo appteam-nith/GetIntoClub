@@ -23,7 +23,7 @@
         android:layout_marginRight="32dp"
         android:layout_marginTop="80dp"
         android:padding="8dp"
-        android:transitionName="skillBack"
+        android:transitionName="backAnim"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="16dp"
         app:cardElevation="0dp"
@@ -172,7 +172,7 @@
         android:layout_marginLeft="32dp"
         android:layout_marginRight="32dp"
         android:animateLayoutChanges="true"
-        android:transitionName="skillButton"
+        android:transitionName="frontAnim"
         app:cardBackgroundColor="@color/redDark"
         app:cardCornerRadius="16dp">
 

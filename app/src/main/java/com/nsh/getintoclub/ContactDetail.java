@@ -34,11 +34,7 @@ public class ContactDetail extends AppCompatActivity {
     }
 
     public void setupdata() {
-//        backView.setAlpha(0f);
-//        ObjectAnimator anim = ObjectAnimator.ofFloat(backView,"alpha",1);
-//        anim.setDuration(1000);
-//        anim.setStartDelay(1000);
-//        anim.start();
+
         name = String.valueOf(Name.getText());
         roll = String.valueOf(RollNumber.getText());
         branch = String.valueOf(Branch.getText());
@@ -53,24 +49,6 @@ public class ContactDetail extends AppCompatActivity {
         if (rollLength == 0) {
             Toast.makeText(this, "Seems to be incomplete", Toast.LENGTH_SHORT).show();
         } else {
-//        FirebaseDatabase.getInstance().getReference().child("RegistrationModel").child(userId)
-//                .addListenerForSingleValueEvent(new ValueEventListener() {
-//                    @Override
-//                    public void onDataChange(DataSnapshot dataSnapshot) {
-//                        Map<String, String> stringStringHashMap =(Map<String, String>) dataSnapshot.getValue();
-//
-//                        stringStringHashMap.put("refresh_token",refreshedToken);
-//
-//                        FirebaseDatabase.getInstance().getReference().child("RegistrationModel").child(userId)
-//                                .setValue(stringStringHashMap);
-//
-//                    }
-//
-//                    @Override
-//                    public void onCancelled(DatabaseError databaseError) {
-//
-//                    }
-//                });
 
         }
 

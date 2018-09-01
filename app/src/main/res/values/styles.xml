@@ -18,6 +18,7 @@
         <item name="android:windowIsFloating">false</item>
         <item name="android:backgroundDimEnabled">false</item>
         <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowSharedElementsUseOverlay">true</item>
     </style>
   <style name="AppTheme.RedRipple" parent="Theme.Transparent">
         <item name="colorControlHighlight">@color/redDark</item>
