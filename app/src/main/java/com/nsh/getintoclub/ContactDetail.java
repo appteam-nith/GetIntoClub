@@ -3,7 +3,6 @@ package com.nsh.getintoclub;
 import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -17,16 +16,15 @@ import android.widget.Toast;
 
 public class ContactDetail extends AppCompatActivity {
 
-    public static String name, roll, branch, mobile, email;
+    public static String name="", roll="", branch="", mobile="", email="";
+    public static int RollLength;
     EditText Name, RollNumber, Branch, Mobile, Email;
     TextView doneContact;
     View backView;
-   public static int RollLength;
     ScrollView scrollView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Intent intent = getIntent();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact_detail);
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT)
@@ -47,14 +45,16 @@ public class ContactDetail extends AppCompatActivity {
     }
 
     public void setupdata() {
-        name = String.valueOf(Name.getText());
-        roll = String.valueOf(RollNumber.getText());
-        branch = String.valueOf(Branch.getText());
-        mobile = String.valueOf(Mobile.getText());
-        email = String.valueOf(Email.getText());
+
+        backView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
         doneContact.setAlpha(0f);
         scrollView.setAlpha(0f);
-        RollLength = roll.length();
         ObjectAnimator objectAnimator2 = ObjectAnimator.ofFloat(doneContact, "alpha", 0, 1);
         ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(scrollView, "alpha", 0, 1);
         ObjectAnimator objectAnimator1 = ObjectAnimator.ofFloat(scrollView, "translationY", 50, 0);
@@ -91,15 +91,21 @@ public class ContactDetail extends AppCompatActivity {
         });
     }
 
-    public void onClick(View view) {
+    public void setupData() {
+        name = String.valueOf(Name.getText());
+        roll = String.valueOf(RollNumber.getText());
+        branch = String.valueOf(Branch.getText());
+        mobile = String.valueOf(Mobile.getText());
+        email = String.valueOf(Email.getText());
+    }
 
-        if (RollLength == 0)
-        {
+    public void onClick(View view) {
+        setupData();
+        RollLength = roll.length();
+        if (RollLength == 0) {
             Toast.makeText(this, "Seems to be incomplete", Toast.LENGTH_SHORT).show();
-        }
-        else
-        {
-onBackPressed();
+        } else {
+            onBackPressed();
         }
     }
 

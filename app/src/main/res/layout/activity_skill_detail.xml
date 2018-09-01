@@ -103,7 +103,7 @@
                         android:layout_marginLeft="16dp"
                         android:fontFamily="@font/psb"
                         android:padding="8dp"
-                        android:text="Area of Interset"
+                        android:text="Area of Intrest"
                         android:textSize="16sp" />
 
                     <EditText

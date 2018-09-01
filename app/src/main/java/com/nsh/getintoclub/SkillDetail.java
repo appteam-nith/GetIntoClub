@@ -4,7 +4,6 @@ import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -21,8 +20,15 @@ import android.widget.Toast;
 
 public class SkillDetail extends AppCompatActivity {
 
-    public static String skill, interset, achievments;
+    public static String skill="", interset="", achievments="";
     public static EditText skillet, intersetet, achievmentset;
+    public static String[] subjects =
+            {
+                    " CSS", " HTML", " JAVA", " PHP", " C ", " C++", " PHOTOSHOP", " ANDROID", " PYTHON"
+//                    ,"NODE JS",
+//                    "JANGO","MONGO DB","JAVASCRIPT","AWS"
+//                    ,"REACT NATIVE","FLASK","RUBY","JQUERY","SQL","AFTER EFFECTS"
+            };
     TextView doneSkill;
     View backView;
     int rollLength;
@@ -33,17 +39,8 @@ public class SkillDetail extends AppCompatActivity {
     RecyclerView.Adapter recyclerViewAdapter;
     RecyclerView.LayoutManager recylerViewLayoutManager;
 
-    public static String[] subjects =
-            {
-                    " CSS", " HTML", " JAVA", " PHP", " C ", " C++", " PHOTOSHOP", " ANDROID", " PYTHON"
-//                    ,"NODE JS",
-//                    "JANGO","MONGO DB","JAVASCRIPT","AWS"
-//                    ,"REACT NATIVE","FLASK","RUBY","JQUERY","SQL","AFTER EFFECTS"
-            };
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Intent intent = getIntent();
         super.onCreate(savedInstanceState);
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         setContentView(R.layout.activity_skill_detail);
@@ -64,11 +61,14 @@ public class SkillDetail extends AppCompatActivity {
 
     public void setupdata() {
 
-        skill = String.valueOf(skillet.getText());
-        interset = String.valueOf(intersetet.getText());
-        achievments = String.valueOf(achievmentset.getText());
-        context = getApplicationContext();
+        backView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
+        context = getApplicationContext();
         relativeLayout = (RelativeLayout) findViewById(R.id.relativelayout1);
         recyclerView = (RecyclerView) findViewById(R.id.recyclerview1);
         recylerViewLayoutManager = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
@@ -114,10 +114,21 @@ public class SkillDetail extends AppCompatActivity {
         });
     }
 
+    public void setupData() {
+
+        skill = String.valueOf(skillet.getText());
+        interset = String.valueOf(intersetet.getText());
+        achievments = String.valueOf(achievmentset.getText());
+        System.out.println(skill);
+    }
+
     public void onClick(View view) {
+        setupData();
         rollLength = skillet.length();
         if (rollLength == 0) {
             Toast.makeText(this, "Enter atleast one skill", Toast.LENGTH_SHORT).show();
+        } else {
+            onBackPressed();
         }
     }
 

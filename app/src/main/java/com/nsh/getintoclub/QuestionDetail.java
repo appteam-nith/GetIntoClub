@@ -16,7 +16,7 @@ import android.widget.Toast;
 
 public class QuestionDetail extends AppCompatActivity {
 
-    public static String q1, q2, q3, q4;
+    public static String q1="", q2="", q3="", q4="";
     ScrollView scrollView;
     EditText ques1, ques2, ques3, ques4;
     TextView doneQuestion;
@@ -44,10 +44,13 @@ public class QuestionDetail extends AppCompatActivity {
     }
 
     public void setupdata() {
-        q1 = String.valueOf(ques1.getText());
-        q2 = String.valueOf(ques2.getText());
-        q3 = String.valueOf(ques3.getText());
-        q4 = String.valueOf(ques4.getText());
+
+        backView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         doneQuestion.setAlpha(0f);
         scrollView.setAlpha(0f);
@@ -87,10 +90,20 @@ public class QuestionDetail extends AppCompatActivity {
         });
     }
 
+    public void setupData() {
+        q1 = String.valueOf(ques1.getText());
+        q2 = String.valueOf(ques2.getText());
+        q3 = String.valueOf(ques3.getText());
+        q4 = String.valueOf(ques4.getText());
+    }
+
     public void onClick(View view) {
+        setupData();
         rollLength = q1.length();
         if (rollLength == 0) {
             Toast.makeText(this, "Seems to be incomplete", Toast.LENGTH_SHORT).show();
+        } else {
+            onBackPressed();
         }
     }
 

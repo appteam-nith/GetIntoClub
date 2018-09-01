@@ -1,5 +1,8 @@
 package com.nsh.getintoclub.adapter;
 
+import android.animation.Animator;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Intent;
@@ -8,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Pair;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnticipateOvershootInterpolator;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -50,8 +54,51 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
         holder.textView.setText(quote.getQuote());
         holder.relativeLayout.setBackground(quote.getDrawable());
 
-        switch (position) {
+        holder.textView.setAlpha(0f);
+        holder.imageView.setAlpha(0f);
+        ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(holder.imageView, "alpha", 0, 1);
+        ObjectAnimator objectAnimator1 = ObjectAnimator.ofFloat(holder.imageView, "translationY", 50, 0);
+        ObjectAnimator objectAnimator2 = ObjectAnimator.ofFloat(holder.textView, "alpha", 0, 1);
+        ObjectAnimator objectAnimator3 = ObjectAnimator.ofFloat(holder.textView, "translationY", 50, 0);
+        objectAnimator.setDuration(1000);
+        objectAnimator.setInterpolator(new AnticipateOvershootInterpolator());
+        objectAnimator1.setDuration(1000);
+        objectAnimator1.setInterpolator(new AnticipateOvershootInterpolator());
+        objectAnimator2.setDuration(1000);
+        objectAnimator2.setInterpolator(new AnticipateOvershootInterpolator());
+        objectAnimator3.setDuration(1000);
+        objectAnimator3.setInterpolator(new AnticipateOvershootInterpolator());
+        objectAnimator.setStartDelay(100);
+        objectAnimator1.setStartDelay(100);
+        objectAnimator2.setStartDelay(300);
+        objectAnimator3.setStartDelay(300);
+        AnimatorSet animatorSet = new AnimatorSet();
+        animatorSet.playTogether(objectAnimator, objectAnimator1, objectAnimator2, objectAnimator3);
+        animatorSet.start();
+        animatorSet.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
 
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                holder.textView.setAlpha(1f);
+                holder.imageView.setAlpha(1f);
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
+
+        switch (position) {
             case 0:
                 holder.imageView.setImageDrawable(context.getDrawable(R.drawable.question_smurf));
                 break;
@@ -68,7 +115,6 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
             public void onClick(View v) {
 
                 switch (position) {
-
                     case 0:
                         options = ActivityOptions.makeSceneTransitionAnimation(
                                 context,
@@ -96,8 +142,6 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
                         context.startActivity(intent
                                 .putExtra("shared_element_transition_name", v.getTransitionName()), options.toBundle());
                         break;
-
-
                 }
             }
         });
