@@ -3,12 +3,12 @@ package com.nsh.getintoclub.adapter;
 import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Intent;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Pair;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -49,6 +49,20 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
         holder.title.setText(quote.getTitle());
         holder.textView.setText(quote.getQuote());
         holder.relativeLayout.setBackground(quote.getDrawable());
+        
+        switch (position) {
+
+            case 0:
+                holder.imageView.setImageDrawable(context.getDrawable(R.drawable.question_smurf));
+                break;
+            case 1:
+                holder.imageView.setImageDrawable(context.getDrawable(R.drawable.skill_smurf));
+                break;
+            case 2:
+                holder.imageView.setImageDrawable(context.getDrawable(R.drawable.contact_smurf));
+                break;
+        }
+
         holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -98,10 +112,12 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
 
         TextView textView, title, detail;
         RelativeLayout relativeLayout;
-        CardView backCard,frontCard;
+        ImageView imageView;
+        CardView backCard, frontCard;
 
         public MyViewHolder(View itemView) {
             super(itemView);
+            imageView = itemView.findViewById(R.id.imageView);
             frontCard = itemView.findViewById(R.id.frontCard);
             backCard = itemView.findViewById(R.id.backCard);
             relativeLayout = itemView.findViewById(R.id.relativeLayout);
