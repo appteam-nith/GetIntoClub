@@ -21,7 +21,7 @@ public class ContactDetail extends AppCompatActivity {
     EditText Name, RollNumber, Branch, Mobile, Email;
     TextView doneContact;
     View backView;
-    int rollLength;
+   public static int RollLength;
     ScrollView scrollView;
 
     @Override
@@ -52,9 +52,9 @@ public class ContactDetail extends AppCompatActivity {
         branch = String.valueOf(Branch.getText());
         mobile = String.valueOf(Mobile.getText());
         email = String.valueOf(Email.getText());
-
         doneContact.setAlpha(0f);
         scrollView.setAlpha(0f);
+        RollLength = roll.length();
         ObjectAnimator objectAnimator2 = ObjectAnimator.ofFloat(doneContact, "alpha", 0, 1);
         ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(scrollView, "alpha", 0, 1);
         ObjectAnimator objectAnimator1 = ObjectAnimator.ofFloat(scrollView, "translationY", 50, 0);
@@ -92,9 +92,14 @@ public class ContactDetail extends AppCompatActivity {
     }
 
     public void onClick(View view) {
-        rollLength = name.length();
-        if (rollLength == 0) {
+
+        if (RollLength == 0)
+        {
             Toast.makeText(this, "Seems to be incomplete", Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
+onBackPressed();
         }
     }
 
