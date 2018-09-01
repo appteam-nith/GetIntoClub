@@ -64,13 +64,21 @@
                 android:layout_height="320dp"
                 android:background="@drawable/red_gradient">
 
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:paddingTop="16dp"
+                    android:layout_margin="16dp"/>
                 <TextView
                     android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:fontFamily="@font/ps"
-                    android:text="aaaaaaaaa"
+                    android:layout_below="@id/imageView"
+                    android:text=""
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
