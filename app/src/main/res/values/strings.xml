@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">GetIntoClub</string>
+    <string name="AppTeam">App Team</string>
+    <string name="EnglishClub">English Club</string>
+    <string name="PublicRelations">Public Relations</string>
+    <string name="DramaticsClub">Dramatics Club</string>
+    <string name="FashionParade">Fashion Parade</string>
+    <string name="DisciplineClub">Discipline Club</string>
+    <string name="OrganizationClub">Organization Club</string>
+    <string name="TechnicalClub">Technical Club</string>
+    <string name="INSandControlClub">INS and Control Club</string>
+    <string name="DesignandDecorationClub">Design and Decoration Club</string>
+    <string name="FineArtsClub">FineArts Club</string>
+    <string name="InformalsClub">Informals Club</string>
+    <string name="HindiClub">Hindi Club</string>
+    <string name="GoGreenClub">Go Green Club</string>
+    <string name="HumanValuesandEthicsCommittee">Human Values and Ethics Committee</string>
+    <string name="MusicClub">Music Club</string>
+    <string name="DanceClub">Dance Club</string>
+    <string name="Pixonoids">Pixonoids</string>
+    <string name="TeamFinance">Team Finance</string>
+
+
 </resources>
