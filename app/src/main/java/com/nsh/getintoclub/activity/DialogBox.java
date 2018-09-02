@@ -84,8 +84,7 @@ public class DialogBox extends Dialog {
                         break;
                     case R.id.PublicRelations:
                         String[] skillp = {
-                                "ABC", "BCD", "EFG", "FGH", "DJ", "fwkd", "enf", "ejfnj", "Prrm"
-                                , "nkgdm"
+                                "Communication", "Leadership", "Organisation", "Cooperation", "SpecialTalent", "Oratory", "Confidence"
                         };
                         SkillDetail.subjects = skillp;
                         set = "Public Relations";
@@ -94,10 +93,9 @@ public class DialogBox extends Dialog {
                         break;
                     case R.id.Dramatics:
                         String[] skilld = {
-                                "Css", "HTML", "Java", "PHP", "C", "C++", "Photoshop", "Android", "Python"
-                                , "NodeJs",
-                                "Django", "MongoDB", "Javascript", "AWS"
-                                , "ReactNative", "Flask", "Ruby", "Jquery", "SQL", "AfterEffects"
+                                "Coordination", "Expressions", "Energetic", "Bold", "Confident", "TeamWork", "Leadership", "Commitment", "QuickLearner"
+                                , "Creativity",
+                                "Hardwork"
                         };
                         SkillDetail.subjects = skilld;
                         set = "Dramatics Club";
@@ -106,10 +104,7 @@ public class DialogBox extends Dialog {
                         break;
                     case R.id.FashionParade:
                         String[] skille = {
-                                "Css", "HTML", "Java", "PHP", "C", "C++", "Photoshop", "Android", "Python"
-                                , "NodeJs",
-                                "Django", "MongoDB", "Javascript", "AWS"
-                                , "ReactNative", "Flask", "Ruby", "Jquery", "SQL", "AfterEffects"
+                                "Confidence", "Personality", "Graceful", "Attitude", "Expressions", "SelfControl", "Leadership", "BodyLanguage"
                         };
                         SkillDetail.subjects = skille;
                         set = "Fashion Parade";
@@ -118,10 +113,7 @@ public class DialogBox extends Dialog {
                         break;
                     case R.id.DisciplineClub:
                         String[] skilldis = {
-                                "Css", "HTML", "Java", "PHP", "C", "C++", "Photoshop", "Android", "Python"
-                                , "NodeJs",
-                                "Django", "MongoDB", "Javascript", "AWS"
-                                , "ReactNative", "Flask", "Ruby", "Jquery", "SQL", "AfterEffects"
+                                "Confidence", "SelfDiscipline", "Management", "Cooperation", "Dedication", "TeamWork"
                         };
                         SkillDetail.subjects = skilldis;
                         set = "Discipline Club";
@@ -130,10 +122,7 @@ public class DialogBox extends Dialog {
                         break;
                     case R.id.OrganizationClub:
                         String[] skillo = {
-                                "Css", "HTML", "Java", "PHP", "C", "C++", "Photoshop", "Android", "Python"
-                                , "NodeJs",
-                                "Django", "MongoDB", "Javascript", "AWS"
-                                , "ReactNative", "Flask", "Ruby", "Jquery", "SQL", "AfterEffects"
+                                "Management", "HandleStress", "TeamWork", "Confidence", "Commitment", "Technical", "Photoshop"
                         };
                         SkillDetail.subjects = skillo;
                         set = "Organization Club";
@@ -142,10 +131,7 @@ public class DialogBox extends Dialog {
                         break;
                     case R.id.TechnicalClub:
                         String[] skilltec = {
-                                "Css", "HTML", "Java", "PHP", "C", "C++", "Photoshop", "Android", "Python"
-                                , "NodeJs",
-                                "Django", "MongoDB", "Javascript", "AWS"
-                                , "ReactNative", "Flask", "Ruby", "Jquery", "SQL", "AfterEffects"
+                                "Management", "Cooperation", "Leadership", "Photoshop", "HardWork", "Confidence", "TeamWork"
                         };
                         SkillDetail.subjects = skilltec;
                         set = "Technical Club";
@@ -154,10 +140,7 @@ public class DialogBox extends Dialog {
                         break;
                     case R.id.INSandControlClub:
                         String[] skillins = {
-                                "Css", "HTML", "Java", "PHP", "C", "C++", "Photoshop", "Android", "Python"
-                                , "NodeJs",
-                                "Django", "MongoDB", "Javascript", "AWS"
-                                , "ReactNative", "Flask", "Ruby", "Jquery", "SQL", "AfterEffects"
+                                "Management", "Communication", "Technical", "Creativity", "TeamWork", "Confidence"
                         };
                         SkillDetail.subjects = skillins;
                         set = "INS and Control Club";
@@ -166,10 +149,7 @@ public class DialogBox extends Dialog {
                         break;
                     case R.id.DesignandDecorationClub:
                         String[] skilldes = {
-                                "Css", "HTML", "Java", "PHP", "C", "C++", "Photoshop", "Android", "Python"
-                                , "NodeJs",
-                                "Django", "MongoDB", "Javascript", "AWS"
-                                , "ReactNative", "Flask", "Ruby", "Jquery", "SQL", "AfterEffects"
+                                "Imagination", "Creativity", "TeamWork", "Innovation", "Leadership", "Observation"
                         };
                         SkillDetail.subjects = skilldes;
                         set = "Design and Decoration Club";
@@ -178,10 +158,7 @@ public class DialogBox extends Dialog {
                         break;
                     case R.id.FineArtsClub:
                         String[] skillfin = {
-                                "Css", "HTML", "Java", "PHP", "C", "C++", "Photoshop", "Android", "Python"
-                                , "NodeJs",
-                                "Django", "MongoDB", "Javascript", "AWS"
-                                , "ReactNative", "Flask", "Ruby", "Jquery", "SQL", "AfterEffects"
+                                "Aesthetic", "Punctual", "Photoshop", "Technical", "Drawing", "Confidence", "Photoshop"
                         };
                         SkillDetail.subjects = skillfin;
                         set = "FineArts Club";
@@ -190,10 +167,7 @@ public class DialogBox extends Dialog {
                         break;
                     case R.id.InformalsClub:
                         String[] skillin = {
-                                "Css", "HTML", "Java", "PHP", "C", "C++", "Photoshop", "Android", "Python"
-                                , "NodeJs",
-                                "Django", "MongoDB", "Javascript", "AWS"
-                                , "ReactNative", "Flask", "Ruby", "Jquery", "SQL", "AfterEffects"
+                                "Creativity", "Imagination", "Communication", "TeamWork", "HardWorking", "Confidence", "Innovation", "Punctual", "Photoshop","Technical"
                         };
                         SkillDetail.subjects = skillin;
                         set = "Informals Club";
@@ -202,10 +176,7 @@ public class DialogBox extends Dialog {
                         break;
                     case R.id.EnglishClub:
                         String[] skilleng = {
-                                "Css", "HTML", "Java", "PHP", "C", "C++", "Photoshop", "Android", "Python"
-                                , "NodeJs",
-                                "Django", "MongoDB", "Javascript", "AWS"
-                                , "ReactNative", "Flask", "Ruby", "Jquery", "SQL", "AfterEffects"
+                                "Communication", "Creativity", "Confidence", "Fluency", "TeamWork", "Technical"
                         };
                         SkillDetail.subjects = skilleng;
                         set = "English Club";
@@ -214,46 +185,35 @@ public class DialogBox extends Dialog {
                         break;
                     case R.id.HindiClub:
                         String[] skillhin = {
-                                "Css", "HTML", "Java", "PHP", "C", "C++", "Photoshop", "Android", "Python"
-                                , "NodeJs",
-                                "Django", "MongoDB", "Javascript", "AWS"
-                                , "ReactNative", "Flask", "Ruby", "Jquery", "SQL", "AfterEffects"
+                                "Confidence", "Communication", "Shayari", "Poetry", "HandleCrowd", "GoodSenseofHumour", "Oration", "TeamWork"
+                                , "Leadership","Cooperation"
                         };
                         SkillDetail.subjects = skillhin;
-                        set = "Hindi Club";
+                        set = "Hindi Samiti";
                         Database.c = set.replace(" ","").toLowerCase();
                         dismiss();
                         break;
                     case R.id.GoGreenClub:
                         String[] skillgo = {
-                                "Css", "HTML", "Java", "PHP", "C", "C++", "Photoshop", "Android", "Python"
-                                , "NodeJs",
-                                "Django", "MongoDB", "Javascript", "AWS"
-                                , "ReactNative", "Flask", "Ruby", "Jquery", "SQL", "AfterEffects"
+                                "Creativity", "Communication", "Confidence", "Hardwork", "TeamWork", "Leadership"
                         };
                         SkillDetail.subjects = skillgo;
-                        set = "Go Green Club";
+                        set = "Cultural Club";
                         Database.c = set.replace(" ","").toLowerCase();
                         dismiss();
                         break;
                     case R.id.HumanValuesandEthicsCommittee:
                         String[] skillhv = {
-                                "Css", "HTML", "Java", "PHP", "C", "C++", "Photoshop", "Android", "Python"
-                                , "NodeJs",
-                                "Django", "MongoDB", "Javascript", "AWS"
-                                , "ReactNative", "Flask", "Ruby", "Jquery", "SQL", "AfterEffects"
+                                "Technical", "Creativity", "Hardwork", "TeamWork", "Confidence", "Imagination", "Innovation", "Projects"
                         };
                         SkillDetail.subjects = skillhv;
-                        set = "Human Values and Ethics Committee";
+                        set = "Entrepreneurship";
                         Database.c = set.replace(" ","").toLowerCase();
                         dismiss();
                         break;
                     case R.id.MusicClub:
                         String[] skillmc = {
-                                "Css", "HTML", "Java", "PHP", "C", "C++", "Photoshop", "Android", "Python"
-                                , "NodeJs",
-                                "Django", "MongoDB", "Javascript", "AWS"
-                                , "ReactNative", "Flask", "Ruby", "Jquery", "SQL", "AfterEffects"
+                                "Punctual", "Guitar", "Piano", "Violin", "Casio", "Confidence", "Commitment", "TeamWork", "Leadership"
                         };
                         SkillDetail.subjects = skillmc;
                         set = "Music Club";
@@ -262,10 +222,8 @@ public class DialogBox extends Dialog {
                         break;
                     case R.id.DanceClub:
                         String[] skilldc = {
-                                "Css", "HTML", "Java", "PHP", "C", "C++", "Photoshop", "Android", "Python"
-                                , "NodeJs",
-                                "Django", "MongoDB", "Javascript", "AWS"
-                                , "ReactNative", "Flask", "Ruby", "Jquery", "SQL", "AfterEffects"
+                                "FreeStyle", "Stamina", "Passion", "Dedication", "QuickLearner", "Leadership", "Punctual", "Salsa", "HipHop"
+                                , "SlowMotion"
                         };
                         SkillDetail.subjects = skilldc;
                         set = "Dance Club";
@@ -274,10 +232,8 @@ public class DialogBox extends Dialog {
                         break;
                     case R.id.Pixonoids:
                         String[] skillpixo = {
-                                "Css", "HTML", "Java", "PHP", "C", "C++", "Photoshop", "Android", "Python"
-                                , "NodeJs",
-                                "Django", "MongoDB", "Javascript", "AWS"
-                                , "ReactNative", "Flask", "Ruby", "Jquery", "SQL", "AfterEffects"
+                                "Photoshop", "AfterEffects", "Cinema4D", "LinearPro", "Illustrator", "Photography", "CompetitiveProgramming",
+                                "HTML","CSS","NodeJs","Designing","Javascript"
                         };
                         SkillDetail.subjects = skillpixo;
                         set = "Pixonoids";
@@ -286,14 +242,12 @@ public class DialogBox extends Dialog {
                         break;
                     case R.id.TeamFinance:
                         String[] skilltf = {
-                                "Css", "HTML", "Java", "PHP", "C", "C++", "Photoshop", "Android", "Python"
-                                , "NodeJs",
-                                "Django", "MongoDB", "Javascript", "AWS"
-                                , "ReactNative", "Flask", "Ruby", "Jquery", "SQL", "AfterEffects"
+                                "FinancialContacts", "Communication", "Management", "Observation", "Confidence", "TeamWork", "HardWork", "Commitment", "Dedication"
+                                , "Imagination"
                         };
                         SkillDetail.subjects = skilltf;
 //                        result = R.id.TeamFinance;
-                        set = "Team Finance";
+                        set = "Treasurer";
                         Database.c = set.replace(" ","").toLowerCase();
                         dismiss();
                         break;
