@@ -5,9 +5,11 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
@@ -19,6 +21,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.AnticipateOvershootInterpolator;
+import android.widget.RadioButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,25 +38,24 @@ import java.util.List;
 
 public class DashActivity extends AppCompatActivity {
 
+    Boolean doubleBackToExitPressedOnce=false;
     TextView knowApp;
     RelativeLayout topText;
     RecyclerView recyclerView;
     MainAdapter mainAdapter;
     List<Quote> quoteList;
     CardView submitBtn;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dash);
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT )
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT)
             if (!hasNavigationBar()) {
                 getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+            } else {
+                getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
             }
-            else{
-                getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN , WindowManager.LayoutParams.FLAG_FULLSCREEN);
-            }
-            initUI();
+        initUI();
     }
 
     @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
@@ -78,6 +80,17 @@ public class DashActivity extends AppCompatActivity {
         knowApp = findViewById(R.id.knowApp);
         topText = findViewById(R.id.topText);
         recyclerView.setAlpha(0f);
+        DialogBox dialogBox = new DialogBox(this);
+        dialogBox.show();
+        dialogBox.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialog) {
+                String set = DialogBox.set;
+                TextView clubname = findViewById(R.id.club);
+                clubname.setText(set);
+            }
+        });
+
         setupData();
     }
 
@@ -152,5 +165,24 @@ public class DashActivity extends AppCompatActivity {
                 startActivity(new Intent(DashActivity.this, AboutAppteam.class));
             }
         });
+    }
+
+    @Override
+    public void onBackPressed(){
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            return;
+        }
+
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Please press again to exit", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce=false;
+            }
+        }, 2000);
     }
 }

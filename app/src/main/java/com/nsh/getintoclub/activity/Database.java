@@ -51,6 +51,7 @@ public class Database extends AppCompatActivity {
     String[] val = {(name.equals("") ? " " : name), (roll.equals("") ? " " : roll), (branch.equals("") ? " " : branch), (mobile.equals("") ? " " : mobile), (email.equals("") ? " " : email), (skill.equals("") ? " " : skill), (interset.equals("") ? " " : interset), (achievments.equals("") ? " " : achievments), (q1.equals("") ? " " : q1), (q2.equals("") ? " " : q2), (q3.equals("") ? " " : q3), (q4.equals("") ? " " : q4)};
     private static final String TAG = "PdfCreatorActivity";
     private File pdfFile;
+    public static String c;
     final private int REQUEST_CODE_ASK_PERMISSIONS = 111;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,8 +74,6 @@ public class Database extends AppCompatActivity {
     }
 
     private void writeNewUser(String roll) {
-
-            String c = "appteam";
             mDatabase.child(c).child(roll).child("Name").setValue(ContactDetail.name);
             mDatabase.child(c).child(roll).child("Branch").setValue(ContactDetail.branch);
             mDatabase.child(c).child(roll).child("Email").setValue(ContactDetail.email);
@@ -86,6 +85,7 @@ public class Database extends AppCompatActivity {
             mDatabase.child(c).child(roll).child("Ques2").setValue(QuestionDetail.q2);
             mDatabase.child(c).child(roll).child("Ques3").setValue(QuestionDetail.q3);
             mDatabase.child(c).child(roll).child("Ques4").setValue(QuestionDetail.q4);
+            c = "null";
         }
 
     private void createPdfWrapper() throws FileNotFoundException, DocumentException {
