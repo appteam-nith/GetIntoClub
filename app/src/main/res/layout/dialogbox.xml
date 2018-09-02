@@ -215,8 +215,7 @@
                                 android:buttonTint="@color/black"
                                 android:fontFamily="@font/ps"
                                 android:text="@string/HumanValuesandEthicsCommittee"
-                                android:textSize="15sp"
-                                android:visibility="gone" />
+                                android:textSize="15sp"/>
 
                             <RadioButton
                                 android:id="@+id/MusicClub"
