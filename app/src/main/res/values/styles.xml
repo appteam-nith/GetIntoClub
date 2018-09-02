@@ -11,6 +11,8 @@
 
     <style name="Theme.Transparent" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowIsTranslucent">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.3</item>
         <item name="android:windowTranslucentStatus">true</item>
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowContentOverlay">@null</item>
@@ -19,6 +21,9 @@
         <item name="android:backgroundDimEnabled">false</item>
         <item name="android:windowContentTransitions">true</item>
         <item name="android:windowSharedElementsUseOverlay">true</item>
+    </style>
+    <style name="Theme.Transparent1" parent="Theme.Transparent">
+        <item name="android:windowTranslucentStatus">false</item>
     </style>
   <style name="AppTheme.RedRipple" parent="Theme.Transparent">
         <item name="colorControlHighlight">@color/redDark</item>

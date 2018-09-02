@@ -16,33 +16,32 @@
         <activity android:name=".activity.MainActivity" />
         <activity
             android:name=".activity.ContactDetail"
-            android:isScrollContainer="true"
-            android:theme="@style/Theme.Transparent"
-            android:windowSoftInputMode="adjustPan" />
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/Theme.Transparent1">
+
+        </activity>
+
         <activity
             android:name=".activity.SkillDetail"
-            android:theme="@style/Theme.Transparent" />
+            android:theme="@style/Theme.Transparent1" />
         <activity
             android:name=".activity.QuestionDetail"
-            android:theme="@style/Theme.Transparent" />
+            android:theme="@style/Theme.Transparent1" />
         <activity
             android:name=".activity.Database"
             android:theme="@style/Theme.Transparent" />
         <activity
             android:name=".activity.DashActivity"
             android:theme="@style/Theme.Transparent">
-
-        </activity>
-        <activity
-            android:name=".activity.AboutAppteam"
-            android:theme="@style/Theme.Transparent" />
-        <activity android:name=".activity.DialogBox" android:theme="@style/Theme.Transparent">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activity.AboutAppteam"
+            android:theme="@style/Theme.Transparent" />
     </application>
 
 </manifest>

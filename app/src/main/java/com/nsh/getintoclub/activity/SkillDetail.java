@@ -25,13 +25,7 @@ public class SkillDetail extends AppCompatActivity {
 
     public static String skill = "", interset = "", achievments = "";
     public static EditText skillet, intersetet, achievmentset;
-    public static String[] subjects =
-            {
-                    "Css", "HTML", "Java", "PHP", "C", "C++", "Photoshop", "Android", "Python"
-                    , "NodeJs",
-                    "Django", "MongoDB", "Javascript", "AWS"
-                    , "ReactNative", "Flask", "Ruby", "Jquery", "SQL", "AfterEffects"
-            };
+    public static String[] subjects;
     TextView doneSkill;
     View backView;
     int rollLength;
@@ -47,8 +41,8 @@ public class SkillDetail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         setContentView(R.layout.activity_skill_detail);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT)
-            getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT)
+//            getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         initUI();
     }
 
