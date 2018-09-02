@@ -123,17 +123,16 @@ public class DashActivity extends AppCompatActivity {
 
         quoteList = new ArrayList<>();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            quoteList.add(new Quote("\"If you choke a smurf, what color does it turn to?\"", getDrawable(R.drawable.green_gradient), "Question.", "Answer"));
-            quoteList.add(new Quote("\"I am so good at sleeping, I can do it with my eyes closed.\"", getDrawable(R.drawable.red_gradient), "Skills.", "Set"));
             quoteList.add(new Quote("\"It doesn't matter where you come from, what matters is what you choose to be.\"", getDrawable(R.drawable.blue_gradient), "Contact.", "Info"));
+            quoteList.add(new Quote("\"I am so good at sleeping, I can do it with my eyes closed.\"", getDrawable(R.drawable.red_gradient), "Skills.", "Set"));
+            quoteList.add(new Quote("\"If you choke a smurf, what color does it turn to?\"", getDrawable(R.drawable.green_gradient), "Question.", "Answers"));
         }
         mainAdapter = new MainAdapter(quoteList, DashActivity.this);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(layoutManager);
-        SnapHelper snapHelperStart = new GravitySnapHelper(Gravity.END);
+        SnapHelper snapHelperStart = new GravitySnapHelper(Gravity.START);
         snapHelperStart.attachToRecyclerView(recyclerView);
         recyclerView.setAdapter(mainAdapter);
-        recyclerView.scrollToPosition(2);
 
 
         submitBtn.setOnClickListener(new View.OnClickListener() {
