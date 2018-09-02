@@ -7,9 +7,9 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="end"
+        android:layout_gravity="start"
         android:layout_marginBottom="8dp"
-        android:layout_marginRight="24dp">
+        android:layout_marginLeft="24dp">
 
         <TextView
             android:id="@+id/title"

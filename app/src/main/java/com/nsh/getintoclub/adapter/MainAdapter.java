@@ -99,13 +99,13 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
         });
 
         switch (position) {
-            case 0:
+            case 2:
                 holder.imageView.setImageDrawable(context.getDrawable(R.drawable.question_smurf));
                 break;
             case 1:
                 holder.imageView.setImageDrawable(context.getDrawable(R.drawable.skill_smurf));
                 break;
-            case 2:
+            case 0:
                 holder.imageView.setImageDrawable(context.getDrawable(R.drawable.contact_smurf));
                 break;
         }
@@ -115,7 +115,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
             public void onClick(View v) {
 
                 switch (position) {
-                    case 0:
+                    case 2:
                         options = ActivityOptions.makeSceneTransitionAnimation(
                                 context,
                                 Pair.create((View) holder.backCard, "backAnim"),
@@ -133,7 +133,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
                         context.startActivity(intent
                                 .putExtra("shared_element_transition_name", v.getTransitionName()), options.toBundle());
                         break;
-                    case 2:
+                    case 0:
                         options = ActivityOptions.makeSceneTransitionAnimation(
                                 context,
                                 Pair.create((View) holder.backCard, "backAnim"),
