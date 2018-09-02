@@ -16,6 +16,7 @@
         <activity android:name=".activity.MainActivity" />
         <activity
             android:name=".activity.ContactDetail"
+            android:isScrollContainer="true"
             android:theme="@style/Theme.Transparent"
             android:windowSoftInputMode="adjustPan" />
         <activity
