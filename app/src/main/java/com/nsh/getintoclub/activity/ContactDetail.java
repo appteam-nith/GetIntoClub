@@ -18,7 +18,7 @@ import com.nsh.getintoclub.R;
 
 public class ContactDetail extends AppCompatActivity {
 
-    public static String name = "", roll = "", branch = "", mobile = "", email = "";
+    public static String name = "", roll = "", branch = "", mobile = "", email = "",rollNo="";
     public static int RollLength;
     EditText Name, RollNumber, Branch, Mobile, Email;
     TextView doneContact;
@@ -105,11 +105,23 @@ public class ContactDetail extends AppCompatActivity {
     }
 
     public void setupData() {
+        rollNo = "";
         name = String.valueOf(Name.getText());
         roll = String.valueOf(RollNumber.getText());
         branch = String.valueOf(Branch.getText());
         mobile = String.valueOf(Mobile.getText());
         email = String.valueOf(Email.getText());
+        for (int i = 0;i<roll.length();i++)
+        {
+            int y =(int) roll.charAt(i);
+            if ((y>=48 && y<=57) || (y>=97 && y<=122) || (y>=65 && y<=90)) {
+                if (y>=65 && y<=90)
+                    y = y+32;
+                char ad = (char) y;
+                rollNo += (ad);
+            }
+        }
+    roll = rollNo;
     }
 
     public void onClick(View view) {

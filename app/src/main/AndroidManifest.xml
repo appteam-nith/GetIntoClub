@@ -18,7 +18,9 @@
         <activity
             android:name=".activity.ContactDetail"
             android:windowSoftInputMode="adjustPan"
-            android:theme="@style/Theme.Transparent" />
+            android:theme="@style/Theme.Transparent"
+            android:isScrollContainer="true"
+            />
         <activity
             android:name=".activity.SkillDetail"
             android:theme="@style/Theme.Transparent" />
