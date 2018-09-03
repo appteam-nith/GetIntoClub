@@ -11,5 +11,5 @@
     <color name="greenDark">#A0C603</color>
     <color name="redLight">#F72B53</color>
     <color name="blueDark">#05D8C2</color>
-
+    <color name="textColor">#292929</color>
 </resources>

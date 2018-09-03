@@ -59,7 +59,17 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     public void setData1(int position) {
-        String description = SkillDetail.skillet.getText().toString();
+        StringBuilder description2 =new StringBuilder(SkillDetail.skillet.getText().toString());
+        String description;
+        for (int i=0;i<description2.length();i++)
+        {
+            int c = (int) description2.charAt(i);
+            if (c<48 || ( c>57 && c<65) || (c>90 && c<97) || c>122)
+            {
+             description2.setCharAt(i,' ');
+            }
+        }
+        description = description2.toString();
         String[] values = description.split(" ");
         int i;
         for (i = 0; i < values.length; i++) {

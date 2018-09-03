@@ -16,11 +16,8 @@
         <activity android:name=".activity.MainActivity" />
         <activity
             android:name=".activity.ContactDetail"
-            android:windowSoftInputMode="adjustResize"
-            android:theme="@style/Theme.Transparent1">
-
-        </activity>
-
+            android:theme="@style/Theme.Transparent1"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".activity.SkillDetail"
             android:theme="@style/Theme.Transparent1" />
@@ -33,15 +30,17 @@
         <activity
             android:name=".activity.DashActivity"
             android:theme="@style/Theme.Transparent">
+        </activity>
+        <activity
+            android:name=".activity.AboutAppteam"
+            android:theme="@style/Theme.Transparent" />
+        <activity android:name=".activity.OtpGenerator" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".activity.AboutAppteam"
-            android:theme="@style/Theme.Transparent" />
     </application>
 
 </manifest>
