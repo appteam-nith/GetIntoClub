@@ -158,7 +158,9 @@ public class DashActivity extends AppCompatActivity {
                 } else
                     Toast.makeText(DashActivity.this, "Seams like you missed entering Roll Number or Skills.", Toast.LENGTH_SHORT).show();
             }
-        });
+        }
+
+        );
 
         knowApp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -167,6 +169,7 @@ public class DashActivity extends AppCompatActivity {
             }
         });
     }
+
 
     @Override
     public void onBackPressed() {

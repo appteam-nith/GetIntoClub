@@ -198,6 +198,7 @@
                         android:fontFamily="@font/ps"
                         android:hint="9898982389"
                         android:paddingBottom="8dp"
+                        android:editable="false"
                         android:paddingLeft="16dp"
                         android:paddingRight="16dp"
                         android:paddingTop="8dp"

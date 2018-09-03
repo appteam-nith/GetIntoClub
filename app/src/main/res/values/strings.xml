@@ -19,6 +19,10 @@
     <string name="DanceClub">Dance Club</string>
     <string name="Pixonoids">Pixonoids</string>
     <string name="TeamFinance">Treasurer</string>
-
+    <string name="phone_number">Phone Number</string>
+    <string name="generate_otp">Generate OTP</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="verify_sign_in">Verify and Sign In</string>
+    <string name="sign_out">sign out</string>
 
 </resources>

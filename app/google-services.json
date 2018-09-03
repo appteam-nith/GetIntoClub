@@ -8,9 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:198631292821:android:1d296141731b232e",
+        "mobilesdk_app_id": "1:198631292821:android:ce8173c6c1548f42",
         "android_client_info": {
-          "package_name": "com.nsh.getintoclub"
+          "package_name": "com.nsh.clubadmin"
         }
       },
       "oauth_client": [
@@ -31,6 +31,50 @@
         "appinvite_service": {
           "status": 1,
           "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:198631292821:android:1d296141731b232e",
+        "android_client_info": {
+          "package_name": "com.nsh.getintoclub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "198631292821-qndk8snv5v0fd9ae9mq4o17a4gk660f4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nsh.getintoclub",
+            "certificate_hash": "2a2fb86c6cfb270c38d649175e3a5c7ba058c83c"
+          }
+        },
+        {
+          "client_id": "198631292821-4orc9sjvbml29cj18591up7fjljucc6c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0InEGkxdZztuRxvDDWhZvbFOkN-RcOw4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "198631292821-4orc9sjvbml29cj18591up7fjljucc6c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2

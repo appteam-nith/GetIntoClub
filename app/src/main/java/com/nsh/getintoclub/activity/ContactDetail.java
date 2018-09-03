@@ -40,6 +40,7 @@ public class ContactDetail extends AppCompatActivity {
         RollNumber = findViewById(R.id.rollnumber);
         Branch = findViewById(R.id.branch);
         Mobile = findViewById(R.id.mobile);
+        Mobile.setText(OtpGenerator.phone);
         Email = findViewById(R.id.email);
         backView = findViewById(R.id.backView);
         scrollView = findViewById(R.id.scrollView);
