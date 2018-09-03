@@ -35,8 +35,11 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class DashActivity extends AppCompatActivity {
 
+    CircleImageView image;
     Boolean doubleBackToExitPressedOnce = false;
     TextView knowApp;
     RelativeLayout topText;
@@ -79,6 +82,7 @@ public class DashActivity extends AppCompatActivity {
         submitBtn = findViewById(R.id.submitBtn);
         knowApp = findViewById(R.id.knowApp);
         topText = findViewById(R.id.topText);
+        image = findViewById(R.id.pic);
         moreBtn = findViewById(R.id.moreBtn);
         recyclerView.setAlpha(0f);
         DialogBox dialogBox = new DialogBox(this);
@@ -89,6 +93,49 @@ public class DashActivity extends AppCompatActivity {
                 String set = DialogBox.set;
                 TextView clubname = findViewById(R.id.club);
                 clubname.setText(set);
+                if (set.equals("Pixonoids")) {
+                    image.setImageDrawable((getDrawable(R.drawable.pixo)));
+                } else if (set.equals("App Team")) {
+                    image.setImageDrawable((getDrawable(R.drawable.logo)));
+                }
+                else if(set.equals("Public Relations")){
+                    image.setImageDrawable((getDrawable(R.drawable.pr)));
+                }
+                else if (set.equals("English Club")){
+                    image.setImageDrawable((getDrawable(R.drawable.english)));
+                }
+                else if (set.equals("Dramatics Club")){
+                    image.setImageDrawable((getDrawable(R.drawable.dramatics)));
+                }
+                else if (set.equals("Fashion Parade")){
+                    image.setImageDrawable((getDrawable(R.drawable.fashion)));
+                }else if (set.equals("Discipline Club")){
+                    image.setImageDrawable((getDrawable(R.drawable.black)));
+                }else if (set.equals("Organization Club")){
+                    image.setImageDrawable((getDrawable(R.drawable.organisation)));
+                }else if (set.equals("Technical Club")){
+                    image.setImageDrawable((getDrawable(R.drawable.technical)));
+                }else if (set.equals("INS and Control Club")){
+                    image.setImageDrawable((getDrawable(R.drawable.ins)));
+                }else if (set.equals("Design and Decoration Club")){
+                    image.setImageDrawable((getDrawable(R.drawable.design)));
+                }else if (set.equals("FineArts Club")){
+                    image.setImageDrawable((getDrawable(R.drawable.fine_arts)));
+                }else if (set.equals("Informals Club")){
+                    image.setImageDrawable((getDrawable(R.drawable.informals)));
+                }else if (set.equals("Hindi Samiti")){
+                    image.setImageDrawable((getDrawable(R.drawable.hindi)));
+                }else if (set.equals("Cultural Club")){
+                    image.setImageDrawable((getDrawable(R.drawable.black)));
+                }else if (set.equals("Entrepreneurship")){
+                    image.setImageDrawable((getDrawable(R.drawable.black)));
+                }else if (set.equals("Music Club")){
+                    image.setImageDrawable((getDrawable(R.drawable.music)));
+                }else if (set.equals("Dance Club")){
+                    image.setImageDrawable((getDrawable(R.drawable.dance)));
+                }else if (set.equals("Treasurer")){
+                    image.setImageDrawable((getDrawable(R.drawable.black)));
+                }
             }
         });
 
@@ -196,6 +243,49 @@ public class DashActivity extends AppCompatActivity {
                 String set = DialogBox.set;
                 TextView clubname = findViewById(R.id.club);
                 clubname.setText(set);
+                if (set.equals("Pixonoids")) {
+                    image.setImageDrawable((getDrawable(R.drawable.pixo)));
+                } else if (set.equals("App Team")) {
+                    image.setImageDrawable((getDrawable(R.drawable.logo)));
+                }
+                else if(set.equals("Public Relations")){
+                    image.setImageDrawable((getDrawable(R.drawable.pr)));
+                }
+                else if (set.equals("English Club")){
+                    image.setImageDrawable((getDrawable(R.drawable.english)));
+                }
+                else if (set.equals("Dramatics Club")){
+                    image.setImageDrawable((getDrawable(R.drawable.dramatics)));
+                }
+                else if (set.equals("Fashion Parade")){
+                    image.setImageDrawable((getDrawable(R.drawable.fashion)));
+                }else if (set.equals("Discipline Club")){
+                    image.setImageDrawable((getDrawable(R.drawable.black)));
+                }else if (set.equals("Organization Club")){
+                    image.setImageDrawable((getDrawable(R.drawable.organisation)));
+                }else if (set.equals("Technical Club")){
+                    image.setImageDrawable((getDrawable(R.drawable.technical)));
+                }else if (set.equals("INS and Control Club")){
+                    image.setImageDrawable((getDrawable(R.drawable.ins)));
+                }else if (set.equals("Design and Decoration Club")){
+                    image.setImageDrawable((getDrawable(R.drawable.design)));
+                }else if (set.equals("FineArts Club")){
+                    image.setImageDrawable((getDrawable(R.drawable.fine_arts)));
+                }else if (set.equals("Informals Club")){
+                    image.setImageDrawable((getDrawable(R.drawable.informals)));
+                }else if (set.equals("Hindi Samiti")){
+                    image.setImageDrawable((getDrawable(R.drawable.hindi)));
+                }else if (set.equals("Cultural Club")){
+                    image.setImageDrawable((getDrawable(R.drawable.black)));
+                }else if (set.equals("Entrepreneurship")){
+                    image.setImageDrawable((getDrawable(R.drawable.black)));
+                }else if (set.equals("Music Club")){
+                    image.setImageDrawable((getDrawable(R.drawable.music)));
+                }else if (set.equals("Dance Club")){
+                    image.setImageDrawable((getDrawable(R.drawable.dance)));
+                }else if (set.equals("Treasurer")){
+                    image.setImageDrawable((getDrawable(R.drawable.black)));
+                }
             }
         });
 
