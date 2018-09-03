@@ -21,7 +21,6 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.AnticipateOvershootInterpolator;
-import android.widget.RadioButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,13 +37,14 @@ import java.util.List;
 
 public class DashActivity extends AppCompatActivity {
 
-    Boolean doubleBackToExitPressedOnce=false;
+    Boolean doubleBackToExitPressedOnce = false;
     TextView knowApp;
     RelativeLayout topText;
     RecyclerView recyclerView;
     MainAdapter mainAdapter;
     List<Quote> quoteList;
-    CardView submitBtn;
+    CardView submitBtn, moreBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,6 +79,7 @@ public class DashActivity extends AppCompatActivity {
         submitBtn = findViewById(R.id.submitBtn);
         knowApp = findViewById(R.id.knowApp);
         topText = findViewById(R.id.topText);
+        moreBtn = findViewById(R.id.moreBtn);
         recyclerView.setAlpha(0f);
         DialogBox dialogBox = new DialogBox(this);
         dialogBox.show();
@@ -168,7 +169,7 @@ public class DashActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed(){
+    public void onBackPressed() {
         if (doubleBackToExitPressedOnce) {
             super.onBackPressed();
             return;
@@ -181,8 +182,23 @@ public class DashActivity extends AppCompatActivity {
 
             @Override
             public void run() {
-                doubleBackToExitPressedOnce=false;
+                doubleBackToExitPressedOnce = false;
             }
         }, 2000);
+    }
+
+    public void onClick(View v) {
+        DialogBox dialogBox = new DialogBox(this);
+        dialogBox.show();
+        dialogBox.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialog) {
+                String set = DialogBox.set;
+                TextView clubname = findViewById(R.id.club);
+                clubname.setText(set);
+            }
+        });
+
+//        setupData();
     }
 }
