@@ -14,6 +14,12 @@
 #### No paperwork. Hassle free selection. Nice UI. Smurfssss
 
 ### Contribution
+
+#### Nishant Singh Hada
+* Lead the team
+* Designed the UI/UX of the App
+* Framed all functionalities 
+
 #### Abhinav Lamba
 * Implemented Shared Element transistion
 * Realtime Firebase Database implementation
@@ -40,5 +46,4 @@
 * Designed and created Question Activity
 * Managed data string accross the app
 
-#### Nishant Singh Hada
-* Added shadows beneath the smurfs
+
